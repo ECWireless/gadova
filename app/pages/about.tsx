@@ -1,19 +1,20 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import Head from 'next/head';
 import { GU } from 'components/theme'
 
-export default function Home() {
+const About: React.FC = () => {
   return (
     <div>
       <Head>
-        <title>GaDova</title>
+        <title>About | GaDova</title>
       </Head>
 
       <main style={{ marginTop: `${GU * 25}px`}}>
         <h1>
-          GaDova
+          About
         </h1>
       </main>
     </div>
   )
 }
+
+export default About;

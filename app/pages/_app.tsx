@@ -4,7 +4,7 @@ import Head from 'next/head'
 import 'styles/globals.css'
 
 // Components
-// import Navigation from 'components/Navigation'
+import Navigation from 'components/Navigation'
 // import Sidebar from 'components/Sidebar'
 // import Footer from 'components/Footer'
 
@@ -50,7 +50,7 @@ export default function App({ Component, pageProps } : { Component: any; pagePro
 const Layout = ({ children, setSidebar, sidebar } : { children: any; setSidebar: any; sidebar: any }) => {
   return(
     <>
-      {/* <Navigation setSidebar={setSidebar} /> */}
+      <Navigation setSidebar={setSidebar} />
       <Backdrop onClick={() => setSidebar(false)} open={sidebar} />
       {/* <Sidebar sidebar={sidebar} setSidebar={setSidebar} /> */}
       {children}

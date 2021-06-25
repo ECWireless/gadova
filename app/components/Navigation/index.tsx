@@ -1,37 +1,34 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { colors, GU } from 'components/theme'
 import { media } from 'components/breakpoints'
 
-// import useAuth from 'hooks/useAuth';
-
 // Components
-import { Flex } from 'components/Containers'
+import { Container } from 'components/Containers';
 import { SandwichMenu } from 'components/SandwichMenu'
 
 export default function Navigation({ setSidebar }) {
-  // const { user } = useAuth();
-  const [background, setBackground] = React.useState(false)
+  // const [background, setBackground] = React.useState(false)
   const router = useRouter()
 
-  React.useEffect(() => {
-    window.addEventListener('scroll', function() {
-      if (window.pageYOffset === 0) {
-        setBackground(false)
-      } else {
-        setBackground(true)
-      }
-    });
-  }, [])
+  // React.useEffect(() => {
+  //   window.addEventListener('scroll', function() {
+  //     if (window.pageYOffset === 0) {
+  //       setBackground(false)
+  //     } else {
+  //       setBackground(true)
+  //     }
+  //   });
+  // }, [])
       
   return (
-    <StyledHeader background={background}>
+    <StyledHeader>
       <StyledMenuContainer>
         <SandwichMenu setSidebar={setSidebar} />
       </StyledMenuContainer>
-      <Flex style={{ height: '100%' }} align={'center'} justify={'space-between'}>
+      <Container style={{ height: '100%' }}>
         <StyledNav>
           <Link href='/'>
             {router.pathname === '/'
@@ -39,20 +36,29 @@ export default function Navigation({ setSidebar }) {
               : <StyledNavButton>Home</StyledNavButton>
             }
           </Link>
-          <Link href='/our-tech'>
-            {router.pathname === '/our-tech'
-              ? <StyledNavButtonActive>Our Tech</StyledNavButtonActive>
-              : <StyledNavButton>Our Tech</StyledNavButton>
+          <Link href='/about'>
+            {router.pathname === '/about'
+              ? <StyledNavButtonActive>About</StyledNavButtonActive>
+              : <StyledNavButton>About</StyledNavButton>
             }
           </Link>
-          <Link href='/careers'>
-            {router.pathname === '/careers'
-              ? <StyledNavButtonActive>Careers</StyledNavButtonActive>
-              : <StyledNavButton>Careers</StyledNavButton>
+          <Link href='/services'>
+            {router.pathname === '/services'
+              ? <StyledNavButtonActive>Services</StyledNavButtonActive>
+              : <StyledNavButton>Services</StyledNavButton>
+            }
+          </Link>
+          <Link href='/contact'>
+            {router.pathname === '/contact'
+              ? <StyledNavButtonActive>Contact</StyledNavButtonActive>
+              : <StyledNavButton>Contact</StyledNavButton>
             }
           </Link>
         </StyledNav>
-      </Flex>
+      </Container>
+      <Link passHref href='/'>
+        <StyledLogo style={{ backgroundImage: 'url(./gadova_logo_lg.png)'}} />
+      </Link>
     </StyledHeader>
   )
 }
@@ -73,13 +79,10 @@ const StyledMenuContainer = styled.div`
   `}
 `
 
-interface IStyledHeader {
-  background: boolean;
-}
-
-const StyledHeader = styled.header<IStyledHeader>`
+const StyledHeader = styled.header`
+  background: ${colors.grey};
   box-sizing: border-box;
-  height: ${GU * 20}px;
+  height: ${GU * 25}px;
   left: 50%;
   position: fixed;
   top: 0;
@@ -88,14 +91,7 @@ const StyledHeader = styled.header<IStyledHeader>`
   z-index: 100;
   
   ${media.sm`
-    background: transparent;
     transform: translateX(-50%);
-  `}
-
-  ${props => props.background && css`
-    ${media.sm`
-      background: ${colors.grey};
-    `}
   `}
 `
 
@@ -105,10 +101,10 @@ const StyledNav = styled.nav`
   display: none;
   height: 100%;
   justify-content: space-between;
-  margin: 0 auto;
 
   ${media.sm`
     display: flex;
+    width: ${GU * 95}px;
   `}
 `
 
@@ -116,16 +112,15 @@ const StyledNavButton = styled.button`
   background: transparent;
   border: none;
   color: ${colors.white};
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   height: 100%;
   outline: none;
   text-transform: uppercase;
   transition: all .3s ease;
-  width: ${GU * 45}px;
   z-index: 102;
 
   &:hover {
-    color: ${colors.blue};
+    color: ${colors.orange};
     cursor: pointer;
   }
 `
@@ -133,13 +128,12 @@ const StyledNavButton = styled.button`
 const StyledNavButtonActive = styled.button`
   background: transparent;
   border: none;
-  color: ${colors.blue};
-  font-size: 1.8rem;
+  color: ${colors.orange};
+  font-size: 1.4rem;
   height: 100%;
   outline: none;
   text-transform: uppercase;
   transition: all .3s ease;
-  width: ${GU * 45}px;
   z-index: 102;
 
   &:hover {
@@ -147,40 +141,17 @@ const StyledNavButtonActive = styled.button`
   }
 `
 
-const StyledLogin = styled.button`
-  background: transparent;
-  border: 2px solid ${colors.white};
-  color: ${colors.white};
-  font-size: 1.8rem;
-  height: ${GU * 10}px;
-  margin-left: ${GU * 10}px;
-  outline: none;
-  text-transform: uppercase;
-  transition: all .3s ease;
-  width: ${GU * 30}px;
-  z-index: 102;
-
-  &:hover {
-    border: 2px solid ${colors.blue};
-    color: ${colors.blue};
-    cursor: pointer;
-  }
-`
-
-const StyledLoginActive = styled.button`
-  background: ${colors.blue};
-  border: 2px solid ${colors.blue};
-  color: ${colors.black};
-  font-size: 1.8rem;
-  height: ${GU * 10}px;
-  margin-left: ${GU * 10}px;
-  outline: none;
-  text-transform: uppercase;
-  transition: all .3s ease;
-  width: ${GU * 30}px;
-  z-index: 102;
+const StyledLogo = styled.div`
+  background-position: center;
+  background-size: cover;
+  height: ${GU * 28}px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  top: ${GU * 11}px;
+  width: ${GU * 55}px;
 
   &:hover {
     cursor: pointer;
   }
-`
+`;
