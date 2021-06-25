@@ -3,12 +3,11 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
 import { media } from 'components/breakpoints'
-import { GU } from 'components/theme'
+import { colors, GU } from 'components/theme'
 
 // Components
-import { colors } from './theme'
-import { Flex } from './Containers'
-import { P2 } from './Typography'
+import { Flex } from 'components/Containers'
+import { P2 } from 'components/Typography'
 
 const Sidebar = ({ sidebar, setSidebar } : { sidebar: boolean; setSidebar: React.Dispatch<SetStateAction<boolean>> }): JSX.Element => {
   const router = useRouter()
@@ -18,31 +17,31 @@ const Sidebar = ({ sidebar, setSidebar } : { sidebar: boolean; setSidebar: React
       <SidebarTop>
         <Flex style={{height: '100%'}} align={'center'} justify={'space-around'}>
           <Link passHref href="/">
-            <StyledLogo onClick={() => setSidebar(false)} src="/AccipiterLogo.png" alt="Coratives Logo"/>
+            <StyledLogo onClick={() => setSidebar(false)} src="/gadova_logo.png" alt="Coratives Logo"/>
           </Link>
           <StyledCloseContainer onClick={() => setSidebar(false)}>
             <p style={{padding: 0, margin: 0}}>&times;</p>
           </StyledCloseContainer>
         </Flex>
       </SidebarTop>
-      <Link passHref href="/our-tech">
-        <StyledSidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/our-tech' ? true : false}>
+      <Link passHref href="/about">
+        <StyledSidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/about' ? true : false}>
           <Flex justify={'flex-start'} align={'center'} style={{ height: '100%' }}>
-            <P2 style={{marginLeft: '2rem'}} color={colors.black}>Our Tech</P2>
+            <P2 style={{marginLeft: '2rem'}} color={colors.black}>About</P2>
           </Flex>
         </StyledSidebarOption>
       </Link>
-      <Link passHref href="/careers">
-        <StyledSidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/careers' ? true : false}>
+      <Link passHref href="/services">
+        <StyledSidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/services' ? true : false}>
           <Flex justify={'flex-start'} align={'center'} style={{ height: '100%' }}>
-            <P2 style={{marginLeft: '2rem'}} color={colors.black}>Careers</P2>
+            <P2 style={{marginLeft: '2rem'}} color={colors.black}>Services</P2>
           </Flex>
         </StyledSidebarOption>
       </Link>
-      <Link passHref href="/login">
-        <StyledSidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/login' ? true : false}>
+      <Link passHref href="/contact">
+        <StyledSidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/contact' ? true : false}>
           <Flex justify={'flex-start'} align={'center'} style={{ height: '100%' }}>
-            <P2 style={{marginLeft: '2rem'}} color={colors.black}>Login</P2>
+            <P2 style={{marginLeft: '2rem'}} color={colors.black}>Contact</P2>
           </Flex>
         </StyledSidebarOption>
       </Link>
@@ -165,14 +164,14 @@ const StyledSidebarOption = styled.div<IStyledSidebarOption>`
     background: #EFEFEF;
   }
   ${props => props.active && css`
-    border-right: 5px solid ${colors.blue};
+    border-right: 5px solid ${colors.orange};
     background: #EFEFEF;
   `}
 `
 
 const StyledLogo = styled.img`
-  height: ${GU * 8}px;
-  width: ${GU * 21}px;
+  height: ${GU * 20}px;
+  width: ${GU * 20}px;
 
   &:hover {
     cursor: pointer;

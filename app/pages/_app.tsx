@@ -5,7 +5,7 @@ import 'styles/globals.css'
 
 // Components
 import Navigation from 'components/Navigation'
-// import Sidebar from 'components/Sidebar'
+import Sidebar from 'components/Sidebar'
 // import Footer from 'components/Footer'
 
 export default function App({ Component, pageProps } : { Component: any; pageProps: any; }): JSX.Element {
@@ -52,7 +52,7 @@ const Layout = ({ children, setSidebar, sidebar } : { children: any; setSidebar:
     <>
       <Navigation setSidebar={setSidebar} />
       <Backdrop onClick={() => setSidebar(false)} open={sidebar} />
-      {/* <Sidebar sidebar={sidebar} setSidebar={setSidebar} /> */}
+      <Sidebar sidebar={sidebar} setSidebar={setSidebar} />
       {children}
       {/* <Footer /> */}
     </>

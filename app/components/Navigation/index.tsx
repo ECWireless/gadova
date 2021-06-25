@@ -57,7 +57,7 @@ export default function Navigation({ setSidebar }) {
         </StyledNav>
       </Container>
       <Link passHref href='/'>
-        <StyledLogo style={{ backgroundImage: 'url(./gadova_logo_lg.png)'}} />
+        <StyledLogo style={{ backgroundImage: 'url(/gadova_logo_lg.png)'}} />
       </Link>
     </StyledHeader>
   )
@@ -74,7 +74,7 @@ const StyledMenuContainer = styled.div`
     top: ${GU * 5}px;
   `}
 
-  ${media.sm`
+  ${media.lg`
     display: none;
   `}
 `
@@ -82,16 +82,21 @@ const StyledMenuContainer = styled.div`
 const StyledHeader = styled.header`
   background: ${colors.grey};
   box-sizing: border-box;
-  height: ${GU * 25}px;
+  height: ${GU * 20}px;
   left: 50%;
   position: fixed;
   top: 0;
   transition: all .3s ease;
+  transform: translateX(-50%);
   width: 100%;
   z-index: 100;
-  
-  ${media.sm`
-    transform: translateX(-50%);
+
+  ${media.xs`
+    height: ${GU * 24}px;
+  `}
+
+  ${media.lg`
+    height: ${GU * 25}px;
   `}
 `
 
@@ -102,7 +107,7 @@ const StyledNav = styled.nav`
   height: 100%;
   justify-content: space-between;
 
-  ${media.sm`
+  ${media.lg`
     display: flex;
     width: ${GU * 95}px;
   `}
@@ -144,12 +149,22 @@ const StyledNavButtonActive = styled.button`
 const StyledLogo = styled.div`
   background-position: center;
   background-size: cover;
-  height: ${GU * 28}px;
+  height: ${GU * 18}px;
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
   top: ${GU * 11}px;
-  width: ${GU * 55}px;
+  width: ${GU * 35}px;
+
+  ${media.xs`
+    height: ${GU * 25}px;
+    width: ${GU * 50}px;
+  `}
+
+  ${media.lg`
+    height: ${GU * 28}px;
+    width: ${GU * 55}px;
+  `}
 
   &:hover {
     cursor: pointer;
