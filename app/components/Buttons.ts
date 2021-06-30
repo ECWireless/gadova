@@ -17,7 +17,7 @@ export const Button = styled.button<IButton>`
   transition: all 0.3s ease;
 
   &:hover {
-    background: ${colors.blue};
+    background: ${colors.orange};
     color: ${colors.white};
     cursor: pointer;
   }
