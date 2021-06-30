@@ -1,30 +1,40 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { Fade } from 'react-reveal'
 
 import { media } from 'components/breakpoints'
 import { colors, GU } from 'components/theme'
 
-import { Container, Flex } from 'components/Containers'
+import { Flex } from 'components/Containers'
 import Spacer from 'components/Spacer'
 import { H3, H4 } from 'components/Typography'
 
-export const Hero: React.FC = () => {
+interface IHero {
+  heroHeading: string;
+  heroSubheading: string;
+}
+
+export const Hero: React.FC<IHero> = ({
+  heroHeading,
+  heroSubheading,
+}) => {
   return (
     <StyledHeroContainer>
       <StyledHeroVideo autoPlay loop muted playsInline>
         <source src='/videos/hero.mp4' type="video/mp4" />
       </StyledHeroVideo>
       <StyledInnerContainer>
-        <StyledTextContainer>
-          <H3 align={'center'} bold={true} color={colors.white} uppercase={true}>
-            From a great thought
-          </H3>
-          <Spacer size={'sm'} />
-          <H4 align={'center'} color={colors.white} uppercase={true}>
-            to an extraordinary product
-          </H4>
-        </StyledTextContainer>
+        <Fade ssrFadeout>
+          <StyledTextContainer>
+            <H3 align={'center'} bold={true} color={colors.white} uppercase={true}>
+              {heroHeading}
+            </H3>
+            <Spacer size={'sm'} />
+            <H4 align={'center'} color={colors.white} uppercase={true}>
+              {heroSubheading}
+            </H4>
+          </StyledTextContainer>
+        </Fade>
       </StyledInnerContainer>
     </StyledHeroContainer>
   )
@@ -89,7 +99,7 @@ const StyledInnerContainer = styled(Flex)`
 `
 
 const StyledTextContainer = styled.div`
-  background: #000;
+  background: rgba(0,0,0,.8);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -99,6 +109,7 @@ const StyledTextContainer = styled.div`
   width: ${GU * 80}px;
 
   ${media.xs`
+    background: #000;
     margin: ${GU * 60}px auto 0;
     width: ${GU * 100}px;
   `}
