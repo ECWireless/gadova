@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { GU } from 'components/theme'
 
+import { Hero } from 'views/home';
+
 export default function Home() {
   return (
     <div>
@@ -9,10 +11,8 @@ export default function Home() {
         <title>GaDova</title>
       </Head>
 
-      <main style={{ marginTop: `${GU * 25}px`}}>
-        <h1>
-          GaDova
-        </h1>
+      <main>
+        <Hero />
       </main>
     </div>
   )

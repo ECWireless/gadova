@@ -78,10 +78,9 @@ export const H2 = styled.h2<ITypograhpy>`
 `
 
 export const H3 = styled.h3<ITypograhpy>`
-	font-size: 2rem;
+	font-size: 1.8rem;
 	font-weight: 300;
 	font-family: 'Nunito Sans', sans-serif;
-	line-height: 25px;
 	
 	${media.xs`
 		font-size: 2.2rem;
@@ -97,7 +96,6 @@ export const H3 = styled.h3<ITypograhpy>`
 	`}
 	${media.xl`
 		font-size: 4rem;
-		line-height: 30px;
 	`}
 	${props => props.align && css`
 		text-align: ${props.align};
@@ -114,7 +112,7 @@ export const H3 = styled.h3<ITypograhpy>`
 `
 
 export const H4 = styled.h4<ITypograhpy>`
-	font-size: 1.8rem;
+	font-size: 1.2rem;
 	font-family: 'Nunito Sans', sans-serif;
 	font-weight: 300;
 	${media.sm`
@@ -124,10 +122,10 @@ export const H4 = styled.h4<ITypograhpy>`
 		font-size: 2.2rem;
 	`}
 	${media.lg`
-		font-size: 2.2rem;
+		font-size: 2.6rem;
 	`}
 	${media.xl`
-		font-size: 3.6rem;
+		font-size: 3rem;
 	`}
 	${props => props.align && css`
 		text-align: ${props.align};
