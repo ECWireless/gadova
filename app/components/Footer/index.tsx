@@ -93,7 +93,7 @@ const StyledSvg = styled.svg`
   `}
 
   &:hover {
-    fill: ${colors.blue};
+    fill: ${colors.orange};
   }
 `
 
