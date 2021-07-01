@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Fade } from 'react-reveal'
+import Image from 'next/image'
 
 import { media } from 'components/breakpoints'
 import { colors, GU } from 'components/theme'
@@ -10,12 +11,74 @@ import { Container, Flex } from 'components/Containers'
 import Spacer from 'components/Spacer'
 import { H3, H4, P2, P3 } from 'components/Typography'
 
-export const Services: React.FC = () => {
+interface IServices {
+  servicesHeading: string;
+  servicesParagraph: string;
+  servicesExamples1Heading: string;
+  servicesExamples1Item1: string;
+  servicesExamples1Item2: string;
+  servicesExamples1Item3: string;
+  servicesExamples1Item4: string;
+  servicesExamples1Item5: string;
+  servicesExamples1Item6: string;
+  servicesExamples2Heading: string;
+  servicesExamples2Item1: string;
+  servicesExamples2Item2: string;
+  servicesExamples2Item3: string;
+  servicesExamples2Item4: string;
+  servicesExamples2Item5: string;
+  servicesExamples2Item6: string;
+  servicesExamples3Heading: string;
+  servicesExamples3Item1: string;
+  servicesExamples3Item2: string;
+  servicesExamples3Item3: string;
+  servicesExamples3Item4: string;
+  servicesExamples3Item5: string;
+  servicesExamples3Item6: string;
+  servicesDescriptionImage: any;
+  servicesDescriptionHeading: string;
+  servicesDescriptionSubheading: string;
+  servicesDescriptionParagraph1: string;
+  servicesDescriptionParagraph2: string;
+}
+
+export const Services: React.FC<IServices> = ({
+  servicesHeading,
+  servicesParagraph,
+  servicesExamples1Heading,
+  servicesExamples1Item1,
+  servicesExamples1Item2,
+  servicesExamples1Item3,
+  servicesExamples1Item4,
+  servicesExamples1Item5,
+  servicesExamples1Item6,
+  servicesExamples2Heading,
+  servicesExamples2Item1,
+  servicesExamples2Item2,
+  servicesExamples2Item3,
+  servicesExamples2Item4,
+  servicesExamples2Item5,
+  servicesExamples2Item6,
+  servicesExamples3Heading,
+  servicesExamples3Item1,
+  servicesExamples3Item2,
+  servicesExamples3Item3,
+  servicesExamples3Item4,
+  servicesExamples3Item5,
+  servicesExamples3Item6,
+  servicesDescriptionImage,
+  servicesDescriptionHeading,
+  servicesDescriptionSubheading,
+  servicesDescriptionParagraph1,
+  servicesDescriptionParagraph2,
+}) => {
   return (
     <Container>
       <Flex direction={'column'}>
         <Spacer size={'md'} />
-        <ButtonRound style={{ margin: '0 auto' }}>What We Do</ButtonRound>
+        <ButtonRound style={{ margin: '0 auto' }}>
+          {servicesHeading}
+        </ButtonRound>
         <Spacer size={'md'} />
         <Fade ssrFadeout>
           <H4 align={'center'} bold={true} uppercase={true}>Services</H4>
@@ -23,9 +86,7 @@ export const Services: React.FC = () => {
         <Spacer size={'sm'} />
         <Fade ssrFadeout>
           <P3 align={'center'} weight={100}>
-            Our goal is to provide products and services that meet or exceed our valued customer’s expectations. 
-            Satisfying our customers with a high level of innovation and quality is our primary goal and it is the fundamental 
-            element of our business mission. We will do this while providing a safe and rewarding place to work for all of our employees.
+            {servicesParagraph}
           </P3>
         </Fade>
       </Flex>
@@ -33,15 +94,18 @@ export const Services: React.FC = () => {
         <Fade bottom ssrFadeout>
           <StyledExampleContainer>
             <Spacer size={'md'} />
-            <P2>Electrical Engineering</P2>
+            <P2>
+              {servicesExamples1Heading}
+            </P2>
             <Spacer size={'sm'} />
             <div id={'example-card'}>
               <ul>
-                <li>Embedded System Design</li>
-                <li>System-level Design</li>
-                <li>High precision lab equipment</li>
-                <li>Control System Design</li>
-                <li>Control Theory</li>
+                <li>{servicesExamples1Item1}</li>
+                <li>{servicesExamples1Item2}</li>
+                <li>{servicesExamples1Item3}</li>
+                <li>{servicesExamples1Item4}</li>
+                <li>{servicesExamples1Item5}</li>
+                <li>{servicesExamples1Item6}</li>
               </ul>
             </div>
           </StyledExampleContainer>
@@ -49,14 +113,18 @@ export const Services: React.FC = () => {
         <Fade bottom delay={200} ssrFadeout>
           <StyledExampleContainer>
             <Spacer size={'md'} />
-            <P2>Mechanical Engineering</P2>
+            <P2>
+              {servicesExamples2Heading}
+            </P2>
             <Spacer size={'sm'} />
             <div id={'example-card'}>
               <ul>
-                <li>Proof of concept development</li>
-                <li>Proof of concept testing</li>
-                <li>Prototype development</li>
-                <li>Prototype testing</li>
+                <li>{servicesExamples2Item1}</li>
+                <li>{servicesExamples2Item2}</li>
+                <li>{servicesExamples2Item3}</li>
+                <li>{servicesExamples2Item4}</li>
+                <li>{servicesExamples2Item5}</li>
+                <li>{servicesExamples2Item6}</li>
               </ul>
             </div>
           </StyledExampleContainer>
@@ -64,16 +132,18 @@ export const Services: React.FC = () => {
         <Fade bottom delay={400} ssrFadeout>
           <StyledExampleContainer>
             <Spacer size={'md'} />
-            <P2>Industrial Engineering</P2>
+            <P2>
+              {servicesExamples3Heading}
+            </P2>
             <Spacer size={'sm'} />
             <div id={'example-card'}>
               <ul>
-                <li>Concept development</li>
-                <li>Human factors and ergonomics</li>
-                <li>Rapid prototyping</li>
-                <li>3D printing</li>
-                <li>Computer rendering</li>
-                <li>Computer animation</li>
+                <li>{servicesExamples3Item1}</li>
+                <li>{servicesExamples3Item2}</li>
+                <li>{servicesExamples3Item3}</li>
+                <li>{servicesExamples3Item4}</li>
+                <li>{servicesExamples3Item5}</li>
+                <li>{servicesExamples3Item6}</li>
               </ul>
             </div>
           </StyledExampleContainer>
@@ -81,22 +151,30 @@ export const Services: React.FC = () => {
       </StyledExamplesContainer>
       <Spacer size={'md'} />
       <StyledDescriptionContainer>
-        <StyledPhoto />
+        <StyledPhoto style={{ backgroundImage: `url(${servicesDescriptionImage})` }} />
         <StyledTextContainer>
           <Fade ssrFadeout>
-            <H3 bold={true} uppercase={true}>Engineering</H3>
+            <H3 bold={true} uppercase={true}>
+              {servicesDescriptionHeading}
+            </H3>
           </Fade>
           <Spacer size={'xs'} />
           <Fade delay={200} ssrFadeout>
-            <H4 bold={true} uppercase={true}>Is the essence of GaDova</H4>
+            <H4 bold={true} uppercase={true}>
+              {servicesDescriptionSubheading}
+            </H4>
           </Fade>
           <Spacer size={'sm'} />
           <Fade delay={400} ssrFadeout>
-            <P3>Our strict adherence to ISO standards and process enables us to bridge the gap between a terrific idea and a profitable product launch.</P3>
+            <P3>
+              {servicesDescriptionParagraph1}
+            </P3>
           </Fade>
           <Spacer size={'xs'} />
           <Fade delay={600} ssrFadeout>
-            <P3>GoDova’s in-house product development facility allows for the creation of complete turnkey solutions, from design to manufacturing.  The GoDova team has a combined +50 years of NPD and R&D experience.</P3>
+            <P3>
+              {servicesDescriptionParagraph2}
+            </P3>
           </Fade>
           <Spacer size={'sm'} />
           <Button>Contact Us</Button>
@@ -175,7 +253,8 @@ const StyledDescriptionContainer = styled.div`
 `;
 
 const StyledPhoto = styled.div`
-  background: ${colors.blue};
+  background-position: center;
+  background-size: cover;
   height: ${GU * 100}px;
   width: 100%;
 
