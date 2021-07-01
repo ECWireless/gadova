@@ -4,7 +4,7 @@ import Image from 'next/image'
 import client from 'client';
 import { GU } from 'components/theme'
 
-import { Hero } from 'views/home';
+import { Hero, Services } from 'views/home';
 
 const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
   const {
@@ -23,6 +23,7 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
           heroHeading={heroHeading}
           heroSubheading={heroSubheading}
         />
+        <Services />
       </main>
     </div>
   )

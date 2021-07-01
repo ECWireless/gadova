@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { media } from 'components/breakpoints';
-import { colors, GU } from 'components/theme';
+import { colors, GU, shadows } from 'components/theme';
 
 interface IButton {
   uppercase?: 'true';
@@ -8,18 +8,49 @@ interface IButton {
 }
 
 export const Button = styled.button<IButton>`
-  background: ${colors.green};
+  background: ${colors.yellow};
   border: none;
   color: ${colors.black};
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.8rem;
-  padding: ${GU * 2}px ${GU * 6}px;
+  font-weight: 500;
+  padding: ${GU * 2}px ${GU * 10}px;
   transition: all 0.3s ease;
 
   &:hover {
-    background: ${colors.orange};
-    color: ${colors.white};
     cursor: pointer;
+    box-shadow: ${shadows.buttonHover};
+  }
+
+  ${media.xl`
+    font-size: 2.2rem;
+    padding: ${GU * 2}px ${GU * 10}px;
+  `}
+
+  ${props => props.uppercase === 'true' && css`
+    text-transform: uppercase;
+  `}
+
+  ${props => props.weight && css`
+    font-weight: ${props.weight};
+  `}
+`;
+
+export const ButtonRound = styled.button<IButton>`
+  background: ${colors.yellow};
+  border: none;
+  border-radius: 17px;
+  color: ${colors.black};
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 100;
+  padding: ${GU * 2}px ${GU * 10}px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: ${shadows.buttonHover};
   }
 
   ${media.xl`
