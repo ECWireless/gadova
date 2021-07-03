@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head'
 import { GetServerSideProps } from 'next'
 import client from 'client';
@@ -52,7 +53,13 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
     locationParagraph2,
     contactHeading,
     contactBackgroundImage,
-   } = homeProps
+  } = homeProps
+
+  const scrollToRef = React.useRef(null);
+
+  const onScrollDown = () => {
+    scrollToRef.current.scrollIntoView();
+  }
 
   return (
     <div>
@@ -64,7 +71,9 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
         <Hero
           heroHeading={heroHeading}
           heroSubheading={heroSubheading}
+          onScrollDown={onScrollDown}
         />
+        <div style={{ transform: 'translateY(-150px)' }} ref={scrollToRef} />
         <Services
           servicesHeading={servicesHeading}
           servicesParagraph={servicesParagraph}
