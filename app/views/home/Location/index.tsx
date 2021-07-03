@@ -7,7 +7,19 @@ import { Container, Flex } from 'components/Containers';
 import Spacer from 'components/Spacer';
 import { H3, H4, P3, P4 } from 'components/Typography';
 
-export const Location: React.FC = () => {
+interface LocationProps {
+  locationSubheading: string;
+  locationHeading: string;
+  locationParagraph1: string;
+  locationParagraph2: string;
+}
+
+export const Location: React.FC<LocationProps> = ({
+  locationSubheading,
+  locationHeading,
+  locationParagraph1,
+  locationParagraph2,
+}) => {
   return (
     <Container>
       <Spacer size={'md'} />
@@ -17,12 +29,12 @@ export const Location: React.FC = () => {
           frameBorder={0} style={{ border: 0}} aria-hidden={'false'} tabIndex={0} loading={'lazy'}
         />
         <StyledTextContainer justify={'center'} direction={'column'}>
-          <H4 uppercase={true} weight={600}>Located in</H4>
-          <H3 uppercase={true} weight={600}>Pittsburgh, PA</H3>
+          <H4 uppercase={true} weight={600}>{locationSubheading}</H4>
+          <H3 uppercase={true} weight={600}>{locationHeading}</H3>
           <Spacer size={'sm'} />
-          <P3>We are proudly doing our part to help restore America’s prominence in engineering and manufacturing.</P3>
+          <P3>{locationParagraph1}</P3>
           <Spacer size={'sm'} />
-          <P4 weight={300}>Construction of our brand new 12,000 square foot, state of the art manufacturing facility in Butler, PA was recently completed</P4>
+          <P4 weight={300}>{locationParagraph2}</P4>
         </StyledTextContainer>
       </Flex>
       <Spacer size={'md'} />
