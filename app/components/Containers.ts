@@ -30,6 +30,8 @@ interface IFlex {
   direction?: 'row' | 'column';
   full?: boolean;
   justify?: 'flex-start' | 'center' | 'flex-end' | 'space-around' | 'space-between';
+  respond?: boolean;
+  respondFlip?: boolean;
   wrap?: 'true';
 }
 
@@ -55,6 +57,22 @@ export const Flex = styled.div<IFlex>`
     props.justify &&
     css`
       justify-content: ${props.justify};
+    `}
+  ${(props) =>
+    props.respond &&
+    css`
+      flex-direction: column;
+      ${media.lg`
+        flex-direction: row;
+      `}
+    `}
+  ${(props) =>
+    props.respondFlip &&
+    css`
+      flex-direction: column-reverse;
+      ${media.lg`
+        flex-direction: row;
+      `}
     `}
 
   ${(props) =>

@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next'
 import client from 'client';
 import imageUrlBuilder from '@sanity/image-url'
 
-import { Hero, Services, Features } from 'views/home';
+import { Hero, Services, Features, Location } from 'views/home';
 
 const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
   const {
@@ -100,6 +100,7 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
           features3Paragraph={features3Paragraph}
           features3Image={urlFor(features3Image)}
         />
+        <Location />
       </main>
     </div>
   )
