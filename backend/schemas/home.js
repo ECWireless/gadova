@@ -244,6 +244,19 @@ export default {
       title: 'Location Paragraph 2',
       type: 'string',
     },
+    {
+      name: 'contactHeading',
+      title: 'Contact Heading',
+      type: 'string',
+    },
+    {
+      name: 'contactBackgroundImage',
+      title: 'Contact Background Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
 
   preview: {

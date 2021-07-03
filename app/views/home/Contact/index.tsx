@@ -10,19 +10,28 @@ import { Input, TextArea } from 'components/Forms';
 import Spacer from 'components/Spacer';
 import { H2 } from 'components/Typography';
 
-export const Contact: React.FC = () => {
+interface ContactProps {
+  contactHeading: string;
+  contactBackgroundImage: any;
+}
+
+export const Contact: React.FC<ContactProps> = ({
+  contactHeading,
+  contactBackgroundImage,
+}) => {
   const onSubmit = (e: React.FocusEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('submitted');
   }
 
   return (
-    <StyledBackground>
+    <StyledBackground style={{ backgroundImage: `url(${contactBackgroundImage}` }}>
+      <StyledBackgroundOverlay />
       <Spacer size={'lg'} />
       <Spacer size={'lg'} />
       <Container>
         <Fade bottom ssrFadeout>
-          <H2 color={colors.white} uppercase={true} weight={700}>Contact</H2>
+          <H2 color={colors.white} uppercase={true} weight={700}>{contactHeading}</H2>
         </Fade>
         <Spacer size={'md'} />
         <form onSubmit={onSubmit}>
@@ -51,7 +60,16 @@ export const Contact: React.FC = () => {
 }
 
 const StyledBackground = styled.div`
-  background: black;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+`;
+
+const StyledBackgroundOverlay = styled.div`
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  position: absolute;
+  width: 100%;
 `;
 
 const StyledInputsContainer = styled.div`

@@ -3,6 +3,7 @@ import { media } from 'components/breakpoints';
 import { colors, GU } from 'components/theme';
 
 export const Input = styled.input`
+  border: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.4rem;
   padding: ${GU * 4}px;
@@ -15,6 +16,7 @@ export const Input = styled.input`
 `;
 
 export const TextArea = styled.textarea`
+  border: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.4rem;
   height: ${GU * 50}px;

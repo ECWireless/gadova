@@ -50,6 +50,8 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
     locationHeading,
     locationParagraph1,
     locationParagraph2,
+    contactHeading,
+    contactBackgroundImage,
    } = homeProps
 
   return (
@@ -110,7 +112,10 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
           locationParagraph1={locationParagraph1}
           locationParagraph2={locationParagraph2}
         />
-        <Contact />
+        <Contact
+          contactHeading={contactHeading}
+          contactBackgroundImage={urlFor(contactBackgroundImage)}
+        />
       </main>
     </div>
   )
@@ -165,6 +170,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
     locationHeading,
     locationParagraph1,
     locationParagraph2,
+    contactHeading,
+    contactBackgroundImage,
 	}`)
 	return {
 	  props: { homeProps },
