@@ -4,36 +4,33 @@ import { colors, GU } from 'components/theme'
 
 import { Container } from 'components/Containers'
 import Spacer from 'components/Spacer'
-import { P5 } from 'components/Typography'
+import { P4 } from 'components/Typography'
 
 const Footer: React.FC = () => {
   return (
     <StyledFooterContainer>
       <StyledBackground />
-      <Spacer size={'md'} />
+      <Spacer size={'lg'} />
       <Container>
         <StyledInnerContainer>
-          <StyledLogo src="/AccipiterLogo.png" alt="Coratives Logo"/>
-          <Spacer size={'md'} />
-          <a
-            rel={'noreferrer noopener'} target={'_blank'}
-            href={'https://www.linkedin.com/company/accipiter-systems/'}
-          >
-            <StyledSvg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-              <title>linkedin</title>
-              <path d="M29 0h-26c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM12 26h-4v-14h4v14zM10 10c-1.106 0-2-0.894-2-2s0.894-2 2-2c1.106 0 2 0.894 2 2s-0.894 2-2 2zM26 26h-4v-8c0-1.106-0.894-2-2-2s-2 0.894-2 2v8h-4v-14h4v2.481c0.825-1.131 2.087-2.481 3.5-2.481 2.488 0 4.5 2.238 4.5 5v9z"></path>
-            </StyledSvg>
-          </a>
-          <Spacer size={'md'} />
-          <StyledTextContainer>
-            <P5>(724) 816-8386</P5>
-            <StyledLine />
-            <P5>12330 PERRY HWY, SUITE #106</P5>
-            <P5>WEXFORD, PA 15090</P5>
-          </StyledTextContainer>
+          <StyledTextContainerLeft>
+            <P4 color={colors.white} uppercase={true}>1822 Main Street</P4>
+            <Spacer size={'xs'} />
+            <P4 color={colors.white} uppercase={true}>Sharpsburg, PA 15215</P4>
+          </StyledTextContainerLeft>
+          <StyledLogo src="/gadova_logo_lg.png" alt="Coratives Logo"/>
+          <StyledTextContainerRight>
+            <StyledLink href="tel:+412-781-1666">
+              <P4 uppercase={true}>412-781-1666</P4>
+            </StyledLink>
+            <Spacer size={'xs'} />
+            <StyledLink href="mailto:falraddadi@gadova.com">
+              <P4 uppercase={true}>falraddadi@gadova.com</P4>
+            </StyledLink>
+          </StyledTextContainerRight>
         </StyledInnerContainer>
       </Container>
-      <Spacer size={'md'} />
+      <Spacer size={'lg'} />
     </StyledFooterContainer>
   )
 }
@@ -41,7 +38,7 @@ const Footer: React.FC = () => {
 export default Footer;
 
 const StyledBackground = styled.div`
-  background: ${colors.grey};
+  background: #9B9B9B;
   height: 100%;
   position: absolute;
   width: 100%;
@@ -53,20 +50,13 @@ const StyledFooterContainer = styled.div`
   width: 100%;
 `;
 
-const StyledLine = styled.div`
-  background: ${colors.green};
-  height: 2px;
-  margin: ${GU * 4}px 0;
-  width: ${GU * 20}px
-`
-
 const StyledInnerContainer = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
   display: flex;
 
-  ${media.sm`
+  ${media.md`
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
@@ -74,35 +64,45 @@ const StyledInnerContainer = styled.div`
 `
 
 const StyledLogo = styled.img`
-  height: ${GU * 20}px;
-  width: ${GU * 46}px;
-  position: relative;
+  height: ${GU * 24}px;
+  margin-bottom: ${GU * 10}px;
+  margin-top: ${GU * 10}px;
+  width: ${GU * 48}px;
   z-index: -1;
-`
 
-const StyledSvg = styled.svg`
-  fill: ${colors.white};
-  height: ${GU * 8}px;
-  transition: all .3s ease;
-  width: ${GU * 8}px;
-
-  ${media.sm`
+  ${media.md`
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    position: absolute;
   `}
-
-  &:hover {
-    fill: ${colors.orange};
-  }
 `
 
-const StyledTextContainer = styled.div`
+const StyledTextContainerLeft = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
 
-  ${media.sm`
+  ${media.md`
+    align-items: flex-start;
+  `}
+`
+
+const StyledTextContainerRight = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  ${media.md`
     align-items: flex-end;
   `}
 `
+
+const StyledLink = styled.a`
+  color: ${colors.white};
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: ${colors.orange};
+  }
+`;
