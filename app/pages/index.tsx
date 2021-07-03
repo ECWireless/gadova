@@ -55,10 +55,15 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
     contactBackgroundImage,
   } = homeProps
 
-  const scrollToRef = React.useRef(null);
+  const servicesRef = React.useRef(null);
+  const contactRef = React.useRef(null);
 
-  const onScrollDown = () => {
-    scrollToRef.current.scrollIntoView();
+  const onScrollToServices = () => {
+    servicesRef.current.scrollIntoView();
+  }
+
+  const onScrollToContact = () => {
+    contactRef.current.scrollIntoView();
   }
 
   return (
@@ -71,9 +76,9 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
         <Hero
           heroHeading={heroHeading}
           heroSubheading={heroSubheading}
-          onScrollDown={onScrollDown}
+          onScrollDown={onScrollToServices}
         />
-        <div style={{ transform: 'translateY(-150px)' }} ref={scrollToRef} />
+        <div style={{ transform: 'translateY(-150px)' }} ref={servicesRef} />
         <Services
           servicesHeading={servicesHeading}
           servicesParagraph={servicesParagraph}
@@ -103,6 +108,7 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
           servicesDescriptionSubheading={servicesDescriptionSubheading}
           servicesDescriptionParagraph1={servicesDescriptionParagraph1}
           servicesDescriptionParagraph2={servicesDescriptionParagraph2}
+          onScrollToContact={onScrollToContact}
         />
         <Features
           features1Heading={features1Heading}
@@ -121,6 +127,7 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
           locationParagraph1={locationParagraph1}
           locationParagraph2={locationParagraph2}
         />
+        <div style={{ transform: 'translateY(-100px)' }} ref={contactRef} />
         <Contact
           contactHeading={contactHeading}
           contactBackgroundImage={urlFor(contactBackgroundImage)}

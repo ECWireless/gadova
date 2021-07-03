@@ -96,6 +96,10 @@ const StyledCard = styled.div`
   ${media.sm`
     padding: ${GU * 14}px ${GU * 10}px;
   `}
+  ${media.xl`
+    padding: ${GU * 24}px ${GU * 10}px;
+    width: 60%;
+  `}
 `;
 
 interface ITypograhpy {
@@ -126,7 +130,7 @@ export const StyledText = styled.p<ITypograhpy>`
 		font-size: 2rem;
 	`}
 	${media.xl`
-		font-size: 2.8rem;
+		font-size: 2.4rem;
 	`}
 	${props => props.uppercase && css`
 		text-transform: uppercase;

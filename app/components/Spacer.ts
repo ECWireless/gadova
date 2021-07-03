@@ -38,6 +38,9 @@ const Spacer = styled.div<ISpacer>`
       ${media.xs`
         height: ${12 * GU}px;
       `}
+      ${media.xl`
+        height: ${16 * GU}px;
+      `}
     `}
   ${(props) =>
     props.size === 'lg' &&

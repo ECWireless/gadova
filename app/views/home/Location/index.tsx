@@ -33,6 +33,7 @@ export const Location: React.FC<LocationProps> = ({
           <Fade bottom ssrFadeout>
             <H4 uppercase={true} weight={600}>{locationSubheading}</H4>
           </Fade>
+          <Spacer size={'xs'} />
           <Fade delay={200} bottom ssrFadeout>
             <H3 uppercase={true} weight={600}>{locationHeading}</H3>
           </Fade>

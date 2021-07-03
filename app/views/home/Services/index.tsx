@@ -39,6 +39,7 @@ interface IServices {
   servicesDescriptionSubheading: string;
   servicesDescriptionParagraph1: string;
   servicesDescriptionParagraph2: string;
+  onScrollToContact: () => void;
 }
 
 export const Services: React.FC<IServices> = ({
@@ -70,17 +71,18 @@ export const Services: React.FC<IServices> = ({
   servicesDescriptionSubheading,
   servicesDescriptionParagraph1,
   servicesDescriptionParagraph2,
+  onScrollToContact,
 }) => {
   return (
     <Container>
       <Flex direction={'column'}>
         <Spacer size={'md'} />
         <ButtonRound style={{ margin: '0 auto' }}>
-          {servicesHeading}
+          What we do
         </ButtonRound>
         <Spacer size={'md'} />
         <Fade ssrFadeout>
-          <H4 align={'center'} bold={true} uppercase={true}>Services</H4>
+          <H4 align={'center'} bold={true} uppercase={true}>{servicesHeading}</H4>
         </Fade>
         <Spacer size={'sm'} />
         <Fade ssrFadeout>
@@ -176,7 +178,7 @@ export const Services: React.FC<IServices> = ({
             </P3>
           </Fade>
           <Spacer size={'sm'} />
-          <Button>Contact Us</Button>
+          <Button onClick={onScrollToContact}>Contact Us</Button>
           <Spacer size={'md'} />
         </StyledTextContainer>
       </StyledDescriptionContainer>
@@ -239,6 +241,13 @@ const StyledExamplesContainer = styled.div`
 
   ${media.md`
     flex-direction: row;
+    margin: 0 auto;
+  `}
+
+  ${media.xl`
+    flex-direction: row;
+    margin: 0 auto;
+    width: ${GU * 300}px;
   `}
 `;
 
