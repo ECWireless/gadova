@@ -8,20 +8,45 @@ import { Container } from 'components/Containers';
 import Spacer from 'components/Spacer';
 import { H3 } from 'components/Typography';
 
-export const Features: React.FC = () => {
+interface FeaturesProps {
+  features1Heading: string;
+  features1Paragraph: string;
+  features1Image: any;
+  features2Heading: string;
+  features2Paragraph: string;
+  features2Image: any;
+  features3Heading: string;
+  features3Paragraph: string;
+  features3Image: any;
+}
+
+export const Features: React.FC<FeaturesProps> = ({
+  features1Heading,
+  features1Paragraph,
+  features1Image,
+  features2Heading,
+  features2Paragraph,
+  features2Image,
+  features3Heading,
+  features3Paragraph,
+  features3Image,
+}) => {
   return (
     <div>
       <FeaturesCard
-        heading={`An innovative partner`}
-        paragraph={`We pride ourselves on being an innovative partner with our customers. GaDova is a vertically integrated design and engineering firm. We offer complete Electrical, Mechanical, Software, Industrial-Design,and Manufacturing Services.`}
+        heading={features1Heading}
+        paragraph={features1Paragraph}
+        image={features1Image}
       />
       <FeaturesCard
-        heading={`Engineering Experience `}
-        paragraph={`GaDova engineers are experienced in medical and non-medical product development practices, quality requirements, regulations, and most importantly, finding solutions`}
+        heading={features2Heading}
+        paragraph={features2Paragraph}
+        image={features2Image}
       />
       <FeaturesCard
-        heading={`Certifications and Designations`}
-        paragraph={`Our rigorous observance to International Organizations for Standardization standards ]and process includes: ISO 9001:2015 and ISO 13485:2016 certified`}
+        heading={features3Heading}
+        paragraph={features3Paragraph}
+        image={features3Image}
       />
     </div>
   )
@@ -30,11 +55,12 @@ export const Features: React.FC = () => {
 interface FeaturesCardProps {
   heading: string;
   paragraph: string;
+  image: any;
 }
 
-const FeaturesCard: React.FC<FeaturesCardProps> = ({ heading, paragraph }) => {
+const FeaturesCard: React.FC<FeaturesCardProps> = ({ heading, paragraph, image }) => {
   return (
-    <StyledBackground>
+    <StyledBackground style={{ backgroundImage: `url(${image})`}}>
       <Spacer size="md" />
       <Spacer size="md" />
       <Container>
@@ -53,7 +79,8 @@ const FeaturesCard: React.FC<FeaturesCardProps> = ({ heading, paragraph }) => {
 }
 
 const StyledBackground = styled.div`
-  background: ${colors.blue};
+  background-position: center;
+  background-size: cover;
 `;
 
 const StyledCard = styled.div`

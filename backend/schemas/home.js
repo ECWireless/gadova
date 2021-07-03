@@ -170,6 +170,60 @@ export default {
       title: 'Services Description Paragraph 2',
       type: 'string',
     },
+    {
+      name: 'features1Heading',
+      title: 'Features 1 Heading',
+      type: 'string',
+    },
+    {
+      name: 'features1Paragraph',
+      title: 'Features 1 Paragraph',
+      type: 'string',
+    },
+    {
+      name: 'features1Image',
+      title: 'Features 1 Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'features2Heading',
+      title: 'Features 2 Heading',
+      type: 'string',
+    },
+    {
+      name: 'features2Paragraph',
+      title: 'Features 2 Paragraph',
+      type: 'string',
+    },
+    {
+      name: 'features2Image',
+      title: 'Features 2 Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'features3Heading',
+      title: 'Features 3 Heading',
+      type: 'string',
+    },
+    {
+      name: 'features3Paragraph',
+      title: 'Features 3 Paragraph',
+      type: 'string',
+    },
+    {
+      name: 'features3Image',
+      title: 'Features 3 Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
 
   preview: {

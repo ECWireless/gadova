@@ -37,6 +37,15 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
     servicesDescriptionSubheading,
     servicesDescriptionParagraph1,
     servicesDescriptionParagraph2,
+    features1Heading,
+    features1Paragraph,
+    features1Image,
+    features2Heading,
+    features2Paragraph,
+    features2Image,
+    features3Heading,
+    features3Paragraph,
+    features3Image,
    } = homeProps
 
   return (
@@ -80,7 +89,17 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
           servicesDescriptionParagraph1={servicesDescriptionParagraph1}
           servicesDescriptionParagraph2={servicesDescriptionParagraph2}
         />
-        <Features />
+        <Features
+          features1Heading={features1Heading}
+          features1Paragraph={features1Paragraph}
+          features1Image={urlFor(features1Image)}
+          features2Heading={features2Heading}
+          features2Paragraph={features2Paragraph}
+          features2Image={urlFor(features2Image)}
+          features3Heading={features3Heading}
+          features3Paragraph={features3Paragraph}
+          features3Image={urlFor(features3Image)}
+        />
       </main>
     </div>
   )
@@ -122,6 +141,15 @@ export const getServerSideProps: GetServerSideProps = async () => {
     servicesDescriptionSubheading,
     servicesDescriptionParagraph1,
     servicesDescriptionParagraph2,
+    features1Heading,
+    features1Paragraph,
+    features1Image,
+    features2Heading,
+    features2Paragraph,
+    features2Image,
+    features3Heading,
+    features3Paragraph,
+    features3Image,
 	}`)
 	return {
 	  props: { homeProps },
