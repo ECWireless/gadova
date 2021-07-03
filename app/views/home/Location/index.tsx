@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Fade } from 'react-reveal';
 import { media } from 'components/breakpoints';
 import { GU } from 'components/theme';
 
@@ -29,12 +30,20 @@ export const Location: React.FC<LocationProps> = ({
           frameBorder={0} style={{ border: 0}} aria-hidden={'false'} tabIndex={0} loading={'lazy'}
         />
         <StyledTextContainer justify={'center'} direction={'column'}>
-          <H4 uppercase={true} weight={600}>{locationSubheading}</H4>
-          <H3 uppercase={true} weight={600}>{locationHeading}</H3>
+          <Fade bottom ssrFadeout>
+            <H4 uppercase={true} weight={600}>{locationSubheading}</H4>
+          </Fade>
+          <Fade delay={200} bottom ssrFadeout>
+            <H3 uppercase={true} weight={600}>{locationHeading}</H3>
+          </Fade>
           <Spacer size={'sm'} />
-          <P3>{locationParagraph1}</P3>
+          <Fade delay={400} bottom ssrFadeout>
+            <P3>{locationParagraph1}</P3>
+          </Fade>
           <Spacer size={'sm'} />
-          <P4 weight={300}>{locationParagraph2}</P4>
+          <Fade delay={600} bottom ssrFadeout>
+            <P4 weight={300}>{locationParagraph2}</P4>
+          </Fade>
         </StyledTextContainer>
       </Flex>
       <Spacer size={'md'} />

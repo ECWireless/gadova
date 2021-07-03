@@ -3,7 +3,8 @@ import { media } from 'components/breakpoints';
 import { colors, GU, shadows } from 'components/theme';
 
 interface IButton {
-  uppercase?: 'true';
+  color?: string;
+  uppercase?: boolean;
   weight?: number;
 }
 
@@ -27,7 +28,11 @@ export const Button = styled.button<IButton>`
     padding: ${GU * 2}px ${GU * 10}px;
   `}
 
-  ${props => props.uppercase === 'true' && css`
+  ${props => props.color && css`
+    color: ${props.color};
+  `}
+
+  ${props => props.uppercase && css`
     text-transform: uppercase;
   `}
 
@@ -58,7 +63,7 @@ export const ButtonRound = styled.button<IButton>`
     padding: ${GU * 2}px ${GU * 10}px;
   `}
 
-  ${props => props.uppercase === 'true' && css`
+  ${props => props.uppercase && css`
     text-transform: uppercase;
   `}
 

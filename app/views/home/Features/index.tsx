@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Fade } from 'react-reveal'
+import { Fade } from 'react-reveal';
 import { media } from 'components/breakpoints';
 import { colors, GU } from 'components/theme';
 
