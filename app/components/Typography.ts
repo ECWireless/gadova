@@ -11,7 +11,7 @@ interface ITypograhpy {
 export const H1 = styled.h1<ITypograhpy>`
 	font-size: 2.6rem;
 	font-weight: regular;
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 
 	${media.xs`
 		font-size: 3.4rem;
@@ -48,7 +48,7 @@ export const H1 = styled.h1<ITypograhpy>`
 export const H2 = styled.h2<ITypograhpy>`
 	font-size: 2.8rem;
 	font-weight: regular;
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	margin: 0;
 	padding: 0;
 
@@ -87,7 +87,7 @@ export const H2 = styled.h2<ITypograhpy>`
 export const H3 = styled.h3<ITypograhpy>`
 	font-size: 1.8rem;
 	font-weight: 300;
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	
 	${media.xs`
 		font-size: 2.2rem;
@@ -123,7 +123,7 @@ export const H3 = styled.h3<ITypograhpy>`
 
 export const H4 = styled.h4<ITypograhpy>`
 	font-size: 1.2rem;
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 300;
 	${media.sm`
 		font-size: 2rem;
@@ -156,7 +156,7 @@ export const H4 = styled.h4<ITypograhpy>`
 
 export const P1 = styled.p<ITypograhpy>`
 	font-size: 1.4rem;
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: light;
 	padding: 0;
 	margin: 0;
@@ -194,7 +194,7 @@ export const P1 = styled.p<ITypograhpy>`
 
 export const P2 = styled.p<ITypograhpy>`
 	font-size: 1.6rem;
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: regular;
 	padding: 0;
 	line-height: 20px;
@@ -228,7 +228,7 @@ export const P2 = styled.p<ITypograhpy>`
 
 export const P3 = styled.p<ITypograhpy>`
 	font-size: 1.5rem;
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: reglar;
 	padding: 0;
 	margin: 0;
@@ -261,7 +261,7 @@ export const P3 = styled.p<ITypograhpy>`
 
 export const P4 = styled.p<ITypograhpy>`
 	font-size: 1.4rem;
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: regular;
 	margin: 0;
 	padding: 0;
@@ -291,7 +291,7 @@ export const P4 = styled.p<ITypograhpy>`
 
 export const P5 = styled.p<ITypograhpy>`
 	font-size: 1.2rem;
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: regular;
 	${media.xs`
 	`}
@@ -324,7 +324,7 @@ export const P5 = styled.p<ITypograhpy>`
 // Block Typography
 export const P2Block = styled.div<ITypograhpy>`
 	font-size: 1.6rem;
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: regular;
 	padding: 0;
 	margin: 0;
@@ -356,7 +356,7 @@ export const P2Block = styled.div<ITypograhpy>`
 
 export const P4Block = styled.div<ITypograhpy>`
 	font-size: 1.4rem;
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: regular;
 	margin: 0;
 	padding: 0;

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Fade } from 'react-reveal'
-import Image from 'next/image'
 
 import { media } from 'components/breakpoints'
 import { colors, GU } from 'components/theme'
@@ -85,7 +84,7 @@ export const Services: React.FC<IServices> = ({
         </Fade>
         <Spacer size={'sm'} />
         <Fade ssrFadeout>
-          <P3 align={'center'} weight={100}>
+          <P3 align={'center'} weight={200}>
             {servicesParagraph}
           </P3>
         </Fade>
