@@ -19,6 +19,10 @@ const About: React.FC = ({ aboutProps }: { [key: string]: any}) => {
     aboutServicesItem5,
     aboutServicesItem6,
     aboutServicesImage,
+    aboutCertificatesHeading,
+    aboutCertificatesParagraph,
+    aboutCertificate1,
+    aboutCertificate2,
   } = aboutProps
 
   return (
@@ -43,7 +47,12 @@ const About: React.FC = ({ aboutProps }: { [key: string]: any}) => {
           aboutServicesItem6={aboutServicesItem6}
           aboutServicesImage={urlFor(aboutServicesImage)}
         />
-        <Certificates />
+        <Certificates
+          aboutCertificatesHeading={aboutCertificatesHeading}
+          aboutCertificatesParagraph={aboutCertificatesParagraph}
+          aboutCertificate1={urlFor(aboutCertificate1)}
+          aboutCertificate2={urlFor(aboutCertificate2)}
+        />
       </main>
     </div>
   )
@@ -66,6 +75,10 @@ export const getServerSideProps: GetServerSideProps = async () => {
     aboutServicesItem5,
     aboutServicesItem6,
     aboutServicesImage,
+    aboutCertificatesHeading,
+    aboutCertificatesParagraph,
+    aboutCertificate1,
+    aboutCertificate2,
 	}`)
 	return {
 	  props: { aboutProps },

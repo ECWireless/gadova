@@ -78,6 +78,32 @@ export default {
         hotspot: true,
       },
     },
+    {
+      name: 'aboutCertificatesHeading',
+      title: 'About Certificates Heading',
+      type: 'string'
+    },
+    {
+      name: 'aboutCertificatesParagraph',
+      title: 'About Certificates Paragraph',
+      type: 'string'
+    },
+    {
+      name: 'aboutCertificate1',
+      title: 'About Certificate 1',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'aboutCertificate2',
+      title: 'About Certificate 2',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
 
   preview: {

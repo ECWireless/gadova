@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Fade } from 'react-reveal'
 import { media } from 'components/breakpoints';
 import { GU } from 'components/theme';
 
@@ -7,19 +8,37 @@ import { Container } from 'components/Containers';
 import Spacer from 'components/Spacer';
 import { H4, P2 } from 'components/Typography';
 
-export const Certificates: React.FC = () => {
+interface CertificatesProps {
+  aboutCertificatesHeading: string;
+  aboutCertificatesParagraph: string;
+  aboutCertificate1: any;
+  aboutCertificate2: any;
+}
+
+export const Certificates: React.FC<CertificatesProps> = ({
+  aboutCertificatesHeading,
+  aboutCertificatesParagraph,
+  aboutCertificate1,
+  aboutCertificate2,
+}) => {
   return (
     <Container>
       <Spacer size={'lg'} />
-      <H4 align={'center'} weight={700} uppercase={true}>
-        Certificates
-      </H4>
+      <Fade bottom ssrFadeout>
+        <H4 align={'center'} weight={700} uppercase={true}>
+          {aboutCertificatesHeading}
+        </H4>
+      </Fade>
       <Spacer size={'sm'} />
-      <P2 align={'center'}>Our rigorous observance to International Organizations for Standardization standards and process includes: ISO 9001:2015 and ISO 13485:2016 certified</P2>
+      <Fade delay={200} bottom ssrFadeout>
+        <P2 align={'center'}>
+          {aboutCertificatesParagraph}
+        </P2>
+      </Fade>
       <Spacer size={'md'} />
       <StyledCertificatesContainer>
-        <StyledCertificate />
-        <StyledCertificate />
+        <StyledCertificate style={{ backgroundImage: `url(${aboutCertificate1})`}} />
+        <StyledCertificate style={{ backgroundImage: `url(${aboutCertificate2})`}} />
       </StyledCertificatesContainer>
       <Spacer size={'lg'} />
     </Container>
@@ -30,7 +49,7 @@ const StyledCertificatesContainer = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: ${GU * 36}px;
+  height: ${GU * 40}px;
   justify-content: space-between;
   margin: 0 auto;
   width: 100%;
@@ -43,12 +62,13 @@ const StyledCertificatesContainer = styled.div`
 `;
 
 const StyledCertificate = styled.div`
-  background: grey;
-  height: ${GU * 16}px;
-  width: ${GU * 60}px;
+  background-position: center;
+  background-size: cover;
+  height: ${GU * 18}px;
+  width: ${GU * 70}px;
 
   ${media.md`
-    height: ${GU * 20}px;
+    height: ${GU * 25}px;
     width: ${GU * 100}px;
   `}
 `;
