@@ -4,7 +4,7 @@ import client from 'client';
 import { GetServerSideProps } from 'next'
 import { GU } from 'components/theme';
 
-import { History } from 'views/about';
+import { History, Services } from 'views/about';
 
 const About: React.FC = ({ aboutProps }: { [key: string]: any}) => {
   const {
@@ -25,6 +25,7 @@ const About: React.FC = ({ aboutProps }: { [key: string]: any}) => {
           aboutDescription={aboutDescription}
           aboutImage={urlFor(aboutImage)}
         />
+        <Services />
       </main>
     </div>
   )

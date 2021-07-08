@@ -48,7 +48,7 @@ export const History: React.FC<HistoryProps> = ({
           </Fade>
         </StyledTextContainer>
       </Flex>
-      <Spacer size={'lg'} />
+      <Spacer size={'md'} />
     </Container>
   )
 }
