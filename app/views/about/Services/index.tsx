@@ -3,28 +3,48 @@ import styled from 'styled-components';
 import { media } from 'components/breakpoints';
 import { colors, GU } from 'components/theme';
 
-import { Container, Flex } from 'components/Containers';
+import { Container } from 'components/Containers';
 import Spacer from 'components/Spacer';
 import { H3 } from 'components/Typography';
 
-export const Services: React.FC = () => {
+interface ServicesProps {
+  aboutServicesHeading: string;
+  aboutServicesItem1: string;
+  aboutServicesItem2: string;
+  aboutServicesItem3: string;
+  aboutServicesItem4: string;
+  aboutServicesItem5: string;
+  aboutServicesItem6: string;
+  aboutServicesImage: any;
+}
+
+export const Services: React.FC<ServicesProps> = ({
+  aboutServicesHeading,
+  aboutServicesItem1,
+  aboutServicesItem2,
+  aboutServicesItem3,
+  aboutServicesItem4,
+  aboutServicesItem5,
+  aboutServicesItem6,
+  aboutServicesImage,
+}) => {
   return (
-    <StyledBackground>
+    <StyledBackground style={{ backgroundImage: `url(${aboutServicesImage})`}}>
       <Spacer size={'lg'} />
       <Container>
         <StyledTextContainer>
           <Spacer size={'md'} />
           <H3 align={'center'} color={colors.blueLight} uppercase={true} weight={600}>
-            Services Include:
+            {aboutServicesHeading}
           </H3>
           <Spacer size={'sm'} />
           <StyledList>
-            <li>Five axis CNC machine</li>
-            <li>3D Mold Design and manufacturing</li>
-            <li>200-ton Injection molding capabilities</li>
-            <li>Surface mounted technology</li>
-            <li>semiautomated through-hole technology</li>
-            <li>Assembly and shipping</li>
+            <li>{aboutServicesItem1}</li>
+            <li>{aboutServicesItem2}</li>
+            <li>{aboutServicesItem3}</li>
+            <li>{aboutServicesItem4}</li>
+            <li>{aboutServicesItem5}</li>
+            <li>{aboutServicesItem6}</li>
           </StyledList>
           <Spacer size={'md'} />
         </StyledTextContainer>
@@ -35,7 +55,8 @@ export const Services: React.FC = () => {
 }
 
 const StyledBackground = styled.div`
-  background: ${colors.blue};
+  background-position: center;
+  background-size: cover;
   width: 100%;
 `;
 

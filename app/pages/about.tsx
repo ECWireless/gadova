@@ -11,6 +11,14 @@ const About: React.FC = ({ aboutProps }: { [key: string]: any}) => {
 		aboutHeading,
     aboutDescription,
     aboutImage,
+    aboutServicesHeading,
+    aboutServicesItem1,
+    aboutServicesItem2,
+    aboutServicesItem3,
+    aboutServicesItem4,
+    aboutServicesItem5,
+    aboutServicesItem6,
+    aboutServicesImage,
   } = aboutProps
 
   return (
@@ -25,7 +33,16 @@ const About: React.FC = ({ aboutProps }: { [key: string]: any}) => {
           aboutDescription={aboutDescription}
           aboutImage={urlFor(aboutImage)}
         />
-        <Services />
+        <Services
+          aboutServicesHeading={aboutServicesHeading}
+          aboutServicesItem1={aboutServicesItem1}
+          aboutServicesItem2={aboutServicesItem2}
+          aboutServicesItem3={aboutServicesItem3}
+          aboutServicesItem4={aboutServicesItem4}
+          aboutServicesItem5={aboutServicesItem5}
+          aboutServicesItem6={aboutServicesItem6}
+          aboutServicesImage={urlFor(aboutServicesImage)}
+        />
       </main>
     </div>
   )
@@ -40,6 +57,14 @@ export const getServerSideProps: GetServerSideProps = async () => {
 		aboutHeading,
     aboutDescription,
     aboutImage,
+    aboutServicesHeading,
+    aboutServicesItem1,
+    aboutServicesItem2,
+    aboutServicesItem3,
+    aboutServicesItem4,
+    aboutServicesItem5,
+    aboutServicesItem6,
+    aboutServicesImage,
 	}`)
 	return {
 	  props: { aboutProps },

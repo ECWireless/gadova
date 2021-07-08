@@ -26,10 +26,53 @@ export default {
       name: 'aboutDescription',
       title: 'About Description',
       type: 'blockContent'
-  },
+    },
     {
       name: 'aboutImage',
       title: 'About Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'aboutServicesHeading',
+      title: 'About Services Heading',
+      type: 'string'
+    },
+    {
+      name: 'aboutServicesItem1',
+      title: 'About Services Item 1',
+      type: 'string'
+    },
+    {
+      name: 'aboutServicesItem2',
+      title: 'About Services Item 2',
+      type: 'string'
+    },
+    {
+      name: 'aboutServicesItem3',
+      title: 'About Services Item 3',
+      type: 'string'
+    },
+    {
+      name: 'aboutServicesItem4',
+      title: 'About Services Item 4',
+      type: 'string'
+    },
+    {
+      name: 'aboutServicesItem5',
+      title: 'About Services Item 5',
+      type: 'string'
+    },
+    {
+      name: 'aboutServicesItem6',
+      title: 'About Services Item 6',
+      type: 'string'
+    },
+    {
+      name: 'aboutServicesImage',
+      title: 'About Services Image',
       type: 'image',
       options: {
         hotspot: true,
