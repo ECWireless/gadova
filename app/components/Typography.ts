@@ -354,6 +354,39 @@ export const P2Block = styled.div<ITypograhpy>`
 	`}
 `
 
+export const P3Block = styled.div<ITypograhpy>`
+	font-size: 1.5rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: reglar;
+	padding: 0;
+	margin: 0;
+
+	${media.sm`
+		font-size: 1.6rem;
+	`}
+	${media.md`
+		font-size: 1.8rem;
+	`}
+	${media.xl`
+		font-size: 2.2rem;
+	`}
+	${props => props.uppercase && css`
+		text-transform: uppercase;
+	`}
+	${props => props.align && css`
+		text-align: ${props.align};
+	`}
+	${props => props.bold && css`
+		font-weight: 600;
+	`}
+	${props => props.weight && css`
+		font-weight: ${props.weight};
+	`}
+	${props => css`
+		color: ${props.color}
+	`}
+`
+
 export const P4Block = styled.div<ITypograhpy>`
 	font-size: 1.4rem;
 	font-family: 'Montserrat', sans-serif;
