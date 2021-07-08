@@ -122,7 +122,7 @@ export const H3 = styled.h3<ITypograhpy>`
 `
 
 export const H4 = styled.h4<ITypograhpy>`
-	font-size: 1.2rem;
+	font-size: 1.6rem;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 300;
 	${media.sm`
@@ -197,7 +197,7 @@ export const P2 = styled.p<ITypograhpy>`
 	font-family: 'Montserrat', sans-serif;
 	font-weight: regular;
 	padding: 0;
-	line-height: 20px;
+	line-height: 26px;
 	margin: 0;
 	${media.sm`
 		font-size: 1.8rem;
