@@ -1,5 +1,7 @@
 import Head from 'next/head';
-import { GU } from 'components/theme'
+import { GU } from 'components/theme';
+
+import { History } from 'views/about';
 
 const About: React.FC = () => {
   return (
@@ -9,9 +11,7 @@ const About: React.FC = () => {
       </Head>
 
       <main style={{ marginTop: `${GU * 25}px`}}>
-        <h1>
-          About
-        </h1>
+        <History />
       </main>
     </div>
   )

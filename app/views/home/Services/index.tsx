@@ -86,7 +86,7 @@ export const Services: React.FC<IServices> = ({
         </Fade>
         <Spacer size={'sm'} />
         <Fade ssrFadeout>
-          <P3 align={'center'} weight={200}>
+          <P3 align={'center'} weight={300}>
             {servicesParagraph}
           </P3>
         </Fade>

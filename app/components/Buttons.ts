@@ -49,7 +49,7 @@ export const ButtonRound = styled.button<IButton>`
   font-family: 'Montserrat', sans-serif;
   font-size: 1.8rem;
   font-style: italic;
-  font-weight: 100;
+  font-weight: 300;
   padding: ${GU * 2}px ${GU * 10}px;
   transition: all 0.3s ease;
 
