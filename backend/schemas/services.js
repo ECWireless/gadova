@@ -95,6 +95,66 @@ export default {
       title: 'Services Example 12',
       type: 'string'
     },
+    {
+      name: 'servicesType1Heading',
+      title: 'Services Type 1 Heading',
+      type: 'string'
+    },
+    {
+      name: 'servicesType1Paragraph',
+      title: 'Services Type 1 Paragraph',
+      type: 'string'
+    },
+    {
+      name: 'servicesType2Heading',
+      title: 'Services Type 2 Heading',
+      type: 'string'
+    },
+    {
+      name: 'servicesType2Paragraph',
+      title: 'Services Type 2 Paragraph',
+      type: 'string'
+    },
+    {
+      name: 'servicesType3Heading',
+      title: 'Services Type 3 Heading',
+      type: 'string'
+    },
+    {
+      name: 'servicesType3Paragraph',
+      title: 'Services Type 3 Paragraph',
+      type: 'string'
+    },
+    {
+      name: 'servicesType4Heading',
+      title: 'Services Type 4 Heading',
+      type: 'string'
+    },
+    {
+      name: 'servicesType4Paragraph',
+      title: 'Services Type 4 Paragraph',
+      type: 'string'
+    },
+    {
+      name: 'servicesType5Heading',
+      title: 'Services Type 5 Heading',
+      type: 'string'
+    },
+    {
+      name: 'servicesType5Paragraph',
+      title: 'Services Type 5 Paragraph',
+      type: 'string'
+    },
+    {
+      name: 'servicesType6Heading',
+      title: 'Services Type 6 Heading',
+      type: 'string'
+    },
+    {
+      name: 'servicesType6Paragraph',
+      title: 'Services Type 6 Paragraph',
+      type: 'string'
+    },
   ],
 
   preview: {

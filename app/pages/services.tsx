@@ -29,6 +29,18 @@ const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any})
     servicesExample10,
     servicesExample11,
     servicesExample12,
+    servicesType1Heading,
+    servicesType1Paragraph,
+    servicesType2Heading,
+    servicesType2Paragraph,
+    servicesType3Heading,
+    servicesType3Paragraph,
+    servicesType4Heading,
+    servicesType4Paragraph,
+    servicesType5Heading,
+    servicesType5Paragraph,
+    servicesType6Heading,
+    servicesType6Paragraph,
   } = servicesProps
 
   return (
@@ -55,7 +67,20 @@ const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any})
           servicesExample11={servicesExample11}
           servicesExample12={servicesExample12}
         />
-        <Types />
+        <Types
+          servicesType1Heading={servicesType1Heading}
+          servicesType1Paragraph={servicesType1Paragraph}
+          servicesType2Heading={servicesType2Heading}
+          servicesType2Paragraph={servicesType2Paragraph}
+          servicesType3Heading={servicesType3Heading}
+          servicesType3Paragraph={servicesType3Paragraph}
+          servicesType4Heading={servicesType4Heading}
+          servicesType4Paragraph={servicesType4Paragraph}
+          servicesType5Heading={servicesType5Heading}
+          servicesType5Paragraph={servicesType5Paragraph}
+          servicesType6Heading={servicesType6Heading}
+          servicesType6Paragraph={servicesType6Paragraph}
+        />
         <Contact
           contactHeading={contactHeading}
           contactBackgroundImage={urlFor(contactBackgroundImage)}
@@ -90,6 +115,18 @@ export const getServerSideProps: GetServerSideProps = async () => {
     servicesExample10,
     servicesExample11,
     servicesExample12,
+    servicesType1Heading,
+    servicesType1Paragraph,
+    servicesType2Heading,
+    servicesType2Paragraph,
+    servicesType3Heading,
+    servicesType3Paragraph,
+    servicesType4Heading,
+    servicesType4Paragraph,
+    servicesType5Heading,
+    servicesType5Paragraph,
+    servicesType6Heading,
+    servicesType6Paragraph,
 	}`)
 	return {
 	  props: { homeProps, servicesProps },
