@@ -6,6 +6,12 @@ import Spacer from 'components/Spacer';
 import { H4, P3 } from 'components/Typography';
 
 interface MoreTypesProps {
+  service7Ref: React.MutableRefObject<any>;
+  service8Ref: React.MutableRefObject<any>;
+  service9Ref: React.MutableRefObject<any>;
+  service10Ref: React.MutableRefObject<any>;
+  service11Ref: React.MutableRefObject<any>;
+  service12Ref: React.MutableRefObject<any>;
   servicesMoreType1Heading: string;
   servicesMoreType1Paragraph: string;
   servicesMoreType2Heading: string;
@@ -21,6 +27,12 @@ interface MoreTypesProps {
 }
 
 export const MoreTypes: React.FC<MoreTypesProps> = ({
+  service7Ref,
+  service8Ref,
+  service9Ref,
+  service10Ref,
+  service11Ref,
+  service12Ref,
   servicesMoreType1Heading,
   servicesMoreType1Paragraph,
   servicesMoreType2Heading,
@@ -37,6 +49,7 @@ export const MoreTypes: React.FC<MoreTypesProps> = ({
   return (
     <Container>
       <Spacer size={'lg'} />
+      <div style={{ transform: 'translateY(-150px)' }} ref={service7Ref} />
       <Fade bottom ssrFadeout>
         <H4 align={'left'} weight={700} uppercase={true}>
           {servicesMoreType1Heading}
@@ -49,6 +62,7 @@ export const MoreTypes: React.FC<MoreTypesProps> = ({
         </P3>
       </Fade>
       <Spacer size={'md'} />
+      <div style={{ transform: 'translateY(-150px)' }} ref={service8Ref} />
       <Fade bottom ssrFadeout>
         <H4 align={'left'} weight={700} uppercase={true}>
           {servicesMoreType2Heading}
@@ -61,6 +75,7 @@ export const MoreTypes: React.FC<MoreTypesProps> = ({
         </P3>
       </Fade>
       <Spacer size={'md'} />
+      <div style={{ transform: 'translateY(-150px)' }} ref={service9Ref} />
       <Fade bottom ssrFadeout>
         <H4 align={'left'} weight={700} uppercase={true}>
           {servicesMoreType3Heading}
@@ -73,6 +88,7 @@ export const MoreTypes: React.FC<MoreTypesProps> = ({
         </P3>
       </Fade>
       <Spacer size={'md'} />
+      <div style={{ transform: 'translateY(-150px)' }} ref={service10Ref} />
       <Fade bottom ssrFadeout>
         <H4 align={'left'} weight={700} uppercase={true}>
           {servicesMoreType4Heading}
@@ -85,6 +101,7 @@ export const MoreTypes: React.FC<MoreTypesProps> = ({
         </P3>
       </Fade>
       <Spacer size={'md'} />
+      <div style={{ transform: 'translateY(-150px)' }} ref={service11Ref} />
       <Fade bottom ssrFadeout>
         <H4 align={'left'} weight={700} uppercase={true}>
           {servicesMoreType5Heading}
@@ -97,6 +114,7 @@ export const MoreTypes: React.FC<MoreTypesProps> = ({
         </P3>
       </Fade>
       <Spacer size={'md'} />
+      <div style={{ transform: 'translateY(-150px)' }} ref={service12Ref} />
       <Fade bottom ssrFadeout>
         <H4 align={'left'} weight={700} uppercase={true}>
           {servicesMoreType6Heading}

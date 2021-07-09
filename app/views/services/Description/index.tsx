@@ -10,6 +10,7 @@ import Spacer from 'components/Spacer';
 import { H4, P3 } from 'components/Typography';
 
 interface DescriptionProps {
+  onScrollToServices: (serviceNumber: number) => void;
   servicesHeading: string;
   servicesParagraph: string;
   servicesImage: any;
@@ -28,6 +29,7 @@ interface DescriptionProps {
 }
 
 export const Description: React.FC<DescriptionProps> = ({
+  onScrollToServices,
   servicesHeading,
   servicesParagraph,
   servicesImage,
@@ -71,59 +73,59 @@ export const Description: React.FC<DescriptionProps> = ({
           <StyledExamplesContainer>
             <Fade delay={400} bottom ssrFadeout>
               <div id="inner-container">
-                <P3 align={'center'} uppercase={true} weight={500}>
+                <StyledServiceLink onClick={() => onScrollToServices(2)} align={'center'} uppercase={true} weight={500}>
                   {servicesExample1}
-                </P3>
+                </StyledServiceLink>
                 <Spacer size={'sm'} />
-                <P3 align={'center'} uppercase={true} weight={500}>
+                <StyledServiceLink onClick={() => onScrollToServices(6)} align={'center'} uppercase={true} weight={500}>
                   {servicesExample2}
-                </P3>
+                </StyledServiceLink>
                 <Spacer size={'sm'} />
-                <P3 align={'center'} uppercase={true} weight={500}>
+                <StyledServiceLink onClick={() => onScrollToServices(9)} align={'center'} uppercase={true} weight={500}>
                   {servicesExample3}
-                </P3>
+                </StyledServiceLink>
                 <Spacer size={'sm'} />
-                <P3 align={'center'} uppercase={true} weight={500}>
+                <StyledServiceLink onClick={() => onScrollToServices(12)} align={'center'} uppercase={true} weight={500}>
                   {servicesExample4}
-                </P3>
+                </StyledServiceLink>
               </div>
             </Fade>
             <Fade delay={600} bottom ssrFadeout>
               <div id="inner-container">
-                <P3 align={'center'} uppercase={true} weight={500}>
+                <StyledServiceLink onClick={() => onScrollToServices(3)} align={'center'} uppercase={true} weight={500}>
                   {servicesExample5}
-                </P3>
+                </StyledServiceLink>
                 <Spacer size={'sm'} />
-                <P3 align={'center'} uppercase={true} weight={500}>
+                <StyledServiceLink onClick={() => onScrollToServices(7)} align={'center'} uppercase={true} weight={500}>
                   {servicesExample6}
-                </P3>
+                </StyledServiceLink>
                 <Spacer size={'sm'} />
-                <P3 align={'center'} uppercase={true} weight={500}>
+                <StyledServiceLink onClick={() => onScrollToServices(4)} align={'center'} uppercase={true} weight={500}>
                   {servicesExample7}
-                </P3>
+                </StyledServiceLink>
                 <Spacer size={'sm'} />
-                <P3 align={'center'} uppercase={true} weight={500}>
+                <StyledServiceLink onClick={() => onScrollToServices(10)} align={'center'} uppercase={true} weight={500}>
                   {servicesExample8}
-                </P3>
+                </StyledServiceLink>
               </div>
             </Fade>
             <Fade delay={800} bottom ssrFadeout>
               <div id="inner-container">
-                <P3 align={'center'} uppercase={true} weight={500}>
+                <StyledServiceLink onClick={() => onScrollToServices(5)} align={'center'} uppercase={true} weight={500}>
                   {servicesExample9}
-                </P3>
+                </StyledServiceLink>
                 <Spacer size={'sm'} />
-                <P3 align={'center'} uppercase={true} weight={500}>
+                <StyledServiceLink onClick={() => onScrollToServices(8)} align={'center'} uppercase={true} weight={500}>
                   {servicesExample10}
-                </P3>
+                </StyledServiceLink>
                 <Spacer size={'sm'} />
-                <P3 align={'center'} uppercase={true} weight={500}>
+                <StyledServiceLink onClick={() => onScrollToServices(11)} align={'center'} uppercase={true} weight={500}>
                   {servicesExample11}
-                </P3>
+                </StyledServiceLink>
                 <Spacer size={'sm'} />
-                <P3 align={'center'} uppercase={true} weight={500}>
+                <StyledServiceLink onClick={() => onScrollToServices(1)} align={'center'} uppercase={true} weight={500}>
                   {servicesExample12}
-                </P3>
+                </StyledServiceLink>
               </div>
             </Fade>
           </StyledExamplesContainer>
@@ -169,5 +171,13 @@ const StyledExamplesContainer = styled.div`
       margin-bottom: 0;
       width: 33.33%;
     `}
+  }
+`;
+
+const StyledServiceLink = styled(P3)`
+  transition: all 0.3s ease;
+  &:hover {
+    color: ${colors.blue};
+    cursor: pointer;
   }
 `;

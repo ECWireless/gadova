@@ -6,6 +6,12 @@ import Spacer from 'components/Spacer';
 import { H4, P3 } from 'components/Typography';
 
 interface TypesProps {
+  service1Ref: React.MutableRefObject<any>;
+  service2Ref: React.MutableRefObject<any>;
+  service3Ref: React.MutableRefObject<any>;
+  service4Ref: React.MutableRefObject<any>;
+  service5Ref: React.MutableRefObject<any>;
+  service6Ref: React.MutableRefObject<any>;
   servicesType1Heading: string;
   servicesType1Paragraph: string;
   servicesType2Heading: string;
@@ -21,6 +27,12 @@ interface TypesProps {
 }
 
 export const Types: React.FC<TypesProps> = ({
+  service1Ref,
+  service2Ref,
+  service3Ref,
+  service4Ref,
+  service5Ref,
+  service6Ref,
   servicesType1Heading,
   servicesType1Paragraph,
   servicesType2Heading,
@@ -37,6 +49,7 @@ export const Types: React.FC<TypesProps> = ({
   return (
     <Container>
       <Spacer size={'lg'} />
+      <div style={{ transform: 'translateY(-150px)' }} ref={service1Ref} />
       <Fade bottom ssrFadeout>
         <H4 align={'left'} weight={700} uppercase={true}>
           {servicesType1Heading}
@@ -49,6 +62,7 @@ export const Types: React.FC<TypesProps> = ({
         </P3>
       </Fade>
       <Spacer size={'md'} />
+      <div style={{ transform: 'translateY(-150px)' }} ref={service2Ref} />
       <Fade bottom ssrFadeout>
         <H4 align={'left'} weight={700} uppercase={true}>
           {servicesType2Heading}
@@ -61,6 +75,7 @@ export const Types: React.FC<TypesProps> = ({
         </P3>
       </Fade>
       <Spacer size={'md'} />
+      <div style={{ transform: 'translateY(-150px)' }} ref={service3Ref} />
       <Fade bottom ssrFadeout>
         <H4 align={'left'} weight={700} uppercase={true}>
           {servicesType3Heading}
@@ -73,6 +88,7 @@ export const Types: React.FC<TypesProps> = ({
         </P3>
       </Fade>
       <Spacer size={'md'} />
+      <div style={{ transform: 'translateY(-150px)' }} ref={service4Ref} />
       <Fade bottom ssrFadeout>
         <H4 align={'left'} weight={700} uppercase={true}>
           {servicesType4Heading}
@@ -85,6 +101,7 @@ export const Types: React.FC<TypesProps> = ({
         </P3>
       </Fade>
       <Spacer size={'md'} />
+      <div style={{ transform: 'translateY(-150px)' }} ref={service5Ref} />
       <Fade bottom ssrFadeout>
         <H4 align={'left'} weight={700} uppercase={true}>
           {servicesType5Heading}
@@ -97,6 +114,7 @@ export const Types: React.FC<TypesProps> = ({
         </P3>
       </Fade>
       <Spacer size={'md'} />
+      <div style={{ transform: 'translateY(-150px)' }} ref={service6Ref} />
       <Fade bottom ssrFadeout>
         <H4 align={'left'} weight={700} uppercase={true}>
           {servicesType6Heading}

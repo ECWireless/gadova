@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
 import imageUrlBuilder from '@sanity/image-url';
@@ -61,6 +62,63 @@ const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any})
     servicesMoreType6Paragraph,
   } = servicesProps
 
+  const service1Ref = React.useRef(null);
+  const service2Ref = React.useRef(null);
+  const service3Ref = React.useRef(null);
+  const service4Ref = React.useRef(null);
+  const service5Ref = React.useRef(null);
+  const service6Ref = React.useRef(null);
+  const service7Ref = React.useRef(null);
+  const service8Ref = React.useRef(null);
+  const service9Ref = React.useRef(null);
+  const service10Ref = React.useRef(null);
+  const service11Ref = React.useRef(null);
+  const service12Ref = React.useRef(null);
+
+  const onScrollToServices = (serviceNumber: number) => {
+    switch (serviceNumber) {
+      case 1:
+        service1Ref.current.scrollIntoView();
+        break;
+      case 2:
+        service2Ref.current.scrollIntoView();
+        break;
+      case 3:
+        service3Ref.current.scrollIntoView();
+        break;
+      case 4:
+        service4Ref.current.scrollIntoView();
+        break;
+      case 5:
+        service5Ref.current.scrollIntoView();
+        break;
+      case 6:
+        service6Ref.current.scrollIntoView();
+        break;
+      case 7:
+        service7Ref.current.scrollIntoView();
+        break;
+      case 8:
+        service8Ref.current.scrollIntoView();
+        break;
+      case 9:
+        service9Ref.current.scrollIntoView();
+        break;
+      case 10:
+        service10Ref.current.scrollIntoView();
+        break;
+      case 11:
+        service11Ref.current.scrollIntoView();
+        break;
+      case 12:
+        service12Ref.current.scrollIntoView();
+        break;
+    
+      default:
+        break;
+    }
+  }
+
   return (
     <div>
       <Head>
@@ -69,6 +127,7 @@ const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any})
 
       <Main>
         <Description
+          onScrollToServices={onScrollToServices}
           servicesHeading={servicesHeading}
           servicesParagraph={servicesParagraph}
           servicesImage={urlFor(servicesImage)}
@@ -86,6 +145,12 @@ const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any})
           servicesExample12={servicesExample12}
         />
         <Types
+          service1Ref={service1Ref}
+          service2Ref={service2Ref}
+          service3Ref={service3Ref}
+          service4Ref={service4Ref}
+          service5Ref={service5Ref}
+          service6Ref={service6Ref}
           servicesType1Heading={servicesType1Heading}
           servicesType1Paragraph={servicesType1Paragraph}
           servicesType2Heading={servicesType2Heading}
@@ -108,6 +173,12 @@ const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any})
           servicesTypeImage6={urlFor(servicesTypeImage6)}
         />
         <MoreTypes
+          service7Ref={service7Ref}
+          service8Ref={service8Ref}
+          service9Ref={service9Ref}
+          service10Ref={service10Ref}
+          service11Ref={service11Ref}
+          service12Ref={service12Ref}
           servicesMoreType1Heading={servicesMoreType1Heading}
           servicesMoreType1Paragraph={servicesMoreType1Paragraph}
           servicesMoreType2Heading={servicesMoreType2Heading}
