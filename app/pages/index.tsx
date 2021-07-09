@@ -5,6 +5,7 @@ import client from 'client';
 import imageUrlBuilder from '@sanity/image-url';
 
 import { Hero, Services, Features, Location, Contact } from 'views/home';
+import { Main } from 'components/Main';
 
 const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
   const {
@@ -72,7 +73,7 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
         <title>GaDova</title>
       </Head>
 
-      <main>
+      <Main>
         <Hero
           heroHeading={heroHeading}
           heroSubheading={heroSubheading}
@@ -132,7 +133,7 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
           contactHeading={contactHeading}
           contactBackgroundImage={urlFor(contactBackgroundImage)}
         />
-      </main>
+      </Main>
     </div>
   )
 }

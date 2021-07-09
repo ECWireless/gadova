@@ -2,9 +2,9 @@ import Head from 'next/head';
 import imageUrlBuilder from '@sanity/image-url'
 import client from 'client';
 import { GetServerSideProps } from 'next'
-import { GU } from 'components/theme';
 
 import { History, Services, Certificates } from 'views/about';
+import { Main } from 'components/Main';
 
 const About: React.FC = ({ aboutProps }: { [key: string]: any}) => {
   const {
@@ -31,7 +31,7 @@ const About: React.FC = ({ aboutProps }: { [key: string]: any}) => {
         <title>About | GaDova</title>
       </Head>
 
-      <main style={{ marginTop: `${GU * 25}px`}}>
+      <Main>
         <History
           aboutHeading={aboutHeading}
           aboutDescription={aboutDescription}
@@ -53,7 +53,7 @@ const About: React.FC = ({ aboutProps }: { [key: string]: any}) => {
           aboutCertificate1={urlFor(aboutCertificate1)}
           aboutCertificate2={urlFor(aboutCertificate2)}
         />
-      </main>
+      </Main>
     </div>
   )
 }

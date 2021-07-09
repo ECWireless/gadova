@@ -53,11 +53,7 @@ const StyledHeroContainer = styled.div`
   height: ${GU * 113}px;
   position: relative;
   overflow: hidden;
-  margin-top: ${GU * 20}px;
 
-  ${media.xs`
-    margin-top: ${GU * 24}px;
-  `}
   ${media.sm`
     height: ${GU * 125}px;
   `}
@@ -66,7 +62,6 @@ const StyledHeroContainer = styled.div`
   `}
   ${media.lg`
     height: ${GU * 175}px;
-    margin-top: ${GU * 25}px;
   `}
   ${media.xl`
     height: ${GU * 225}px;

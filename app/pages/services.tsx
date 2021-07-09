@@ -2,10 +2,10 @@ import Head from 'next/head';
 import { GetServerSideProps } from 'next';
 import imageUrlBuilder from '@sanity/image-url';
 import client from 'client';
-import { GU } from 'components/theme'
 
 import { Contact } from 'views/home';
 import { Description, Types, Gallery, MoreTypes } from 'views/services';
+import { Main } from 'components/Main';
 
 const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any}) => {
   const {
@@ -67,7 +67,7 @@ const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any})
         <title>Services | GaDova</title>
       </Head>
 
-      <main style={{ marginTop: `${GU * 25}px`}}>
+      <Main>
         <Description
           servicesHeading={servicesHeading}
           servicesParagraph={servicesParagraph}
@@ -125,7 +125,7 @@ const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any})
           contactHeading={contactHeading}
           contactBackgroundImage={urlFor(contactBackgroundImage)}
         />
-      </main>
+      </Main>
     </div>
   )
 }

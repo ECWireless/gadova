@@ -2,10 +2,10 @@ import Head from 'next/head';
 import { GetServerSideProps } from 'next';
 import imageUrlBuilder from '@sanity/image-url';
 import client from 'client';
-import { GU } from 'components/theme';
 
 import { Contact as ContactForm } from 'views/home';
 import { ContactInfo } from 'views/contact';
+import { Main } from 'components/Main';
 
 const Contact: React.FC = ({ homeProps, contactProps }: { [key: string]: any}) => {
   const {
@@ -26,7 +26,7 @@ const Contact: React.FC = ({ homeProps, contactProps }: { [key: string]: any}) =
         <title>Contact | GaDova</title>
       </Head>
 
-      <main style={{ marginTop: `${GU * 25}px`}}>
+      <Main>
         <ContactForm
           contactHeading={contactHeading}
           contactBackgroundImage={urlFor(contactBackgroundImage)}
@@ -38,7 +38,7 @@ const Contact: React.FC = ({ homeProps, contactProps }: { [key: string]: any}) =
           contactAddressLine1={contactAddressLine1}
           contactAddressLine2={contactAddressLine2}
         />
-      </main>
+      </Main>
     </div>
   )
 }
