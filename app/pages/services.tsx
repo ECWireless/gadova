@@ -5,7 +5,7 @@ import client from 'client';
 import { GU } from 'components/theme'
 
 import { Contact } from 'views/home';
-import { Description, Types } from 'views/services';
+import { Description, Types, Gallery } from 'views/services';
 
 const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any}) => {
   const {
@@ -41,6 +41,24 @@ const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any})
     servicesType5Paragraph,
     servicesType6Heading,
     servicesType6Paragraph,
+    servicesTypeImage1,
+    servicesTypeImage2,
+    servicesTypeImage3,
+    servicesTypeImage4,
+    servicesTypeImage5,
+    servicesTypeImage6,
+    servicesMoreType1Heading,
+    servicesMoreType1Paragraph,
+    servicesMoreType2Heading,
+    servicesMoreType2Paragraph,
+    servicesMoreType3Heading,
+    servicesMoreType3Paragraph,
+    servicesMoreType4Heading,
+    servicesMoreType4Paragraph,
+    servicesMoreType5Heading,
+    servicesMoreType5Paragraph,
+    servicesMoreType6Heading,
+    servicesMoreType6Paragraph,
   } = servicesProps
 
   return (
@@ -80,6 +98,14 @@ const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any})
           servicesType5Paragraph={servicesType5Paragraph}
           servicesType6Heading={servicesType6Heading}
           servicesType6Paragraph={servicesType6Paragraph}
+        />
+        <Gallery
+          servicesTypeImage1={urlFor(servicesTypeImage1)}
+          servicesTypeImage2={urlFor(servicesTypeImage2)}
+          servicesTypeImage3={urlFor(servicesTypeImage3)}
+          servicesTypeImage4={urlFor(servicesTypeImage4)}
+          servicesTypeImage5={urlFor(servicesTypeImage5)}
+          servicesTypeImage6={urlFor(servicesTypeImage6)}
         />
         <Contact
           contactHeading={contactHeading}
@@ -127,6 +153,24 @@ export const getServerSideProps: GetServerSideProps = async () => {
     servicesType5Paragraph,
     servicesType6Heading,
     servicesType6Paragraph,
+    servicesTypeImage1,
+    servicesTypeImage2,
+    servicesTypeImage3,
+    servicesTypeImage4,
+    servicesTypeImage5,
+    servicesTypeImage6,
+    servicesMoreType1Heading,
+    servicesMoreType1Paragraph,
+    servicesMoreType2Heading,
+    servicesMoreType2Paragraph,
+    servicesMoreType3Heading,
+    servicesMoreType3Paragraph,
+    servicesMoreType4Heading,
+    servicesMoreType4Paragraph,
+    servicesMoreType5Heading,
+    servicesMoreType5Paragraph,
+    servicesMoreType6Heading,
+    servicesMoreType6Paragraph,
 	}`)
 	return {
 	  props: { homeProps, servicesProps },
