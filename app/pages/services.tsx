@@ -5,13 +5,31 @@ import client from 'client';
 import { GU } from 'components/theme'
 
 import { Contact } from 'views/home';
-import { Description } from 'views/services';
+import { Description, Types } from 'views/services';
 
-const Services: React.FC = ({ homeProps }: { [key: string]: any}) => {
+const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any}) => {
   const {
     contactHeading,
     contactBackgroundImage,
   } = homeProps
+
+  const {
+    servicesHeading,
+    servicesParagraph,
+    servicesImage,
+    servicesExample1,
+    servicesExample2,
+    servicesExample3,
+    servicesExample4,
+    servicesExample5,
+    servicesExample6,
+    servicesExample7,
+    servicesExample8,
+    servicesExample9,
+    servicesExample10,
+    servicesExample11,
+    servicesExample12,
+  } = servicesProps
 
   return (
     <div>
@@ -20,7 +38,24 @@ const Services: React.FC = ({ homeProps }: { [key: string]: any}) => {
       </Head>
 
       <main style={{ marginTop: `${GU * 25}px`}}>
-        <Description />
+        <Description
+          servicesHeading={servicesHeading}
+          servicesParagraph={servicesParagraph}
+          servicesImage={urlFor(servicesImage)}
+          servicesExample1={servicesExample1}
+          servicesExample2={servicesExample2}
+          servicesExample3={servicesExample3}
+          servicesExample4={servicesExample4}
+          servicesExample5={servicesExample5}
+          servicesExample6={servicesExample6}
+          servicesExample7={servicesExample7}
+          servicesExample8={servicesExample8}
+          servicesExample9={servicesExample9}
+          servicesExample10={servicesExample10}
+          servicesExample11={servicesExample11}
+          servicesExample12={servicesExample12}
+        />
+        <Types />
         <Contact
           contactHeading={contactHeading}
           contactBackgroundImage={urlFor(contactBackgroundImage)}
@@ -39,8 +74,25 @@ export const getServerSideProps: GetServerSideProps = async () => {
     contactHeading,
     contactBackgroundImage,
 	}`)
+  const servicesProps = await client.fetch(`*[_type == "services" && slug.current == "v1"][0] {
+    servicesHeading,
+    servicesParagraph,
+    servicesImage,
+    servicesExample1,
+    servicesExample2,
+    servicesExample3,
+    servicesExample4,
+    servicesExample5,
+    servicesExample6,
+    servicesExample7,
+    servicesExample8,
+    servicesExample9,
+    servicesExample10,
+    servicesExample11,
+    servicesExample12,
+	}`)
 	return {
-	  props: { homeProps },
+	  props: { homeProps, servicesProps },
 	}
 }
 
