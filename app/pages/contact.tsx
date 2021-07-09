@@ -1,7 +1,18 @@
 import Head from 'next/head';
-import { GU } from 'components/theme'
+import { GetServerSideProps } from 'next';
+import imageUrlBuilder from '@sanity/image-url';
+import client from 'client';
+import { GU } from 'components/theme';
 
-const Contact: React.FC = () => {
+import { Contact as ContactForm } from 'views/home';
+import { ContactInfo } from 'views/contact';
+
+const Contact: React.FC = ({ homeProps, contactProps }: { [key: string]: any}) => {
+  const {
+    contactHeading,
+    contactBackgroundImage,
+  } = homeProps
+
   return (
     <div>
       <Head>
@@ -9,12 +20,31 @@ const Contact: React.FC = () => {
       </Head>
 
       <main style={{ marginTop: `${GU * 25}px`}}>
-        <h1>
-          Contact
-        </h1>
+        <ContactForm
+          contactHeading={contactHeading}
+          contactBackgroundImage={urlFor(contactBackgroundImage)}
+        />
+        <ContactInfo />
       </main>
     </div>
   )
+}
+
+function urlFor(source) {
+  return imageUrlBuilder(client).image(source)
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const homeProps = await client.fetch(`*[_type == "home" && slug.current == "v1"][0] {
+    contactHeading,
+    contactBackgroundImage,
+	}`)
+  const contactProps = await client.fetch(`*[_type == "services" && slug.current == "v1"][0] {
+    servicesHeading,
+	}`)
+	return {
+	  props: { homeProps, contactProps },
+	}
 }
 
 export default Contact;
