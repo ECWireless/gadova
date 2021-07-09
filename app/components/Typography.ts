@@ -241,6 +241,7 @@ export const P3 = styled.p<ITypograhpy>`
 	`}
 	${media.xl`
 		font-size: 2.2rem;
+		line-height: 28px;
 	`}
 	${props => props.uppercase && css`
 		text-transform: uppercase;
