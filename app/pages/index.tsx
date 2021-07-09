@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head'
-import { GetServerSideProps } from 'next'
+import { GetServerSideProps } from 'next';
 import client from 'client';
-import imageUrlBuilder from '@sanity/image-url'
+import imageUrlBuilder from '@sanity/image-url';
 
 import { Hero, Services, Features, Location, Contact } from 'views/home';
 
