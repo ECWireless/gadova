@@ -42,7 +42,7 @@ export const Gallery: React.FC<GalleryProps> = ({
           <StyledImage style={{ backgroundImage: `url(${servicesTypeImage5})`}} />
         </Fade>
         <Fade bottom ssrFadeout>
-          <StyledImage style={{ backgroundImage: `url(${servicesTypeImage6})`}} />
+        <StyledImage style={{ backgroundImage: `url(${servicesTypeImage6})`}} />
         </Fade>
       </StyleContainerInner>
     </div>
@@ -69,6 +69,6 @@ const StyledImage = styled.div`
   `}
 
   ${media.lg`
-    width: 33.33%;
+    width: 33.33vw;
   `}
 `;

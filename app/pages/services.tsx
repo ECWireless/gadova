@@ -5,7 +5,7 @@ import client from 'client';
 import { GU } from 'components/theme'
 
 import { Contact } from 'views/home';
-import { Description, Types, Gallery } from 'views/services';
+import { Description, Types, Gallery, MoreTypes } from 'views/services';
 
 const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any}) => {
   const {
@@ -106,6 +106,20 @@ const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any})
           servicesTypeImage4={urlFor(servicesTypeImage4)}
           servicesTypeImage5={urlFor(servicesTypeImage5)}
           servicesTypeImage6={urlFor(servicesTypeImage6)}
+        />
+        <MoreTypes
+          servicesMoreType1Heading={servicesMoreType1Heading}
+          servicesMoreType1Paragraph={servicesMoreType1Paragraph}
+          servicesMoreType2Heading={servicesMoreType2Heading}
+          servicesMoreType2Paragraph={servicesMoreType2Paragraph}
+          servicesMoreType3Heading={servicesMoreType3Heading}
+          servicesMoreType3Paragraph={servicesMoreType3Paragraph}
+          servicesMoreType4Heading={servicesMoreType4Heading}
+          servicesMoreType4Paragraph={servicesMoreType4Paragraph}
+          servicesMoreType5Heading={servicesMoreType5Heading}
+          servicesMoreType5Paragraph={servicesMoreType5Paragraph}
+          servicesMoreType6Heading={servicesMoreType6Heading}
+          servicesMoreType6Paragraph={servicesMoreType6Paragraph}
         />
         <Contact
           contactHeading={contactHeading}
