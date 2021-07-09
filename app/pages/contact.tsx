@@ -12,6 +12,13 @@ const Contact: React.FC = ({ homeProps, contactProps }: { [key: string]: any}) =
     contactHeading,
     contactBackgroundImage,
   } = homeProps
+  const {
+    contactSubheading,
+    contactPhoneNumber,
+    contactEmailAddress,
+    contactAddressLine1,
+    contactAddressLine2,
+  } = contactProps;
 
   return (
     <div>
@@ -24,7 +31,13 @@ const Contact: React.FC = ({ homeProps, contactProps }: { [key: string]: any}) =
           contactHeading={contactHeading}
           contactBackgroundImage={urlFor(contactBackgroundImage)}
         />
-        <ContactInfo />
+        <ContactInfo
+          contactSubheading={contactSubheading}
+          contactPhoneNumber={contactPhoneNumber}
+          contactEmailAddress={contactEmailAddress}
+          contactAddressLine1={contactAddressLine1}
+          contactAddressLine2={contactAddressLine2}
+        />
       </main>
     </div>
   )
@@ -39,8 +52,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
     contactHeading,
     contactBackgroundImage,
 	}`)
-  const contactProps = await client.fetch(`*[_type == "services" && slug.current == "v1"][0] {
-    servicesHeading,
+  const contactProps = await client.fetch(`*[_type == "contact" && slug.current == "v1"][0] {
+    contactSubheading,
+    contactPhoneNumber,
+    contactEmailAddress,
+    contactAddressLine1,
+    contactAddressLine2,
 	}`)
 	return {
 	  props: { homeProps, contactProps },

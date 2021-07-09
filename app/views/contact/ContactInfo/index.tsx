@@ -8,7 +8,21 @@ import { Container, Flex } from 'components/Containers';
 import Spacer from 'components/Spacer';
 import { H3, P3 } from 'components/Typography';
 
-export const ContactInfo: React.FC = () => {
+interface ContactInfoProps {
+  contactSubheading: string;
+  contactPhoneNumber: string;
+  contactEmailAddress: string;
+  contactAddressLine1: string;
+  contactAddressLine2: string;
+}
+
+export const ContactInfo: React.FC<ContactInfoProps> = ({
+  contactSubheading,
+  contactPhoneNumber,
+  contactEmailAddress,
+  contactAddressLine1,
+  contactAddressLine2,
+}) => {
   return (
     <Container>
       <Spacer size={'md'} />
@@ -19,27 +33,37 @@ export const ContactInfo: React.FC = () => {
         />
         <StyledTextContainer justify={'center'} direction={'column'}>
           <Fade bottom ssrFadeout>
-            <H3 uppercase={true} weight={600}>Contact Info</H3>
+            <H3 uppercase={true} weight={600}>
+              {contactSubheading}
+            </H3>
           </Fade>
           <Spacer size={'md'} />
           <Fade delay={200} bottom ssrFadeout>
             <a style={{ textDecoration: 'none' }} href="tel:+4127811666">
-              <P3 color={colors.black} uppercase={true} weight={500}>412-781-1666</P3>
+              <P3 color={colors.black} uppercase={true} weight={500}>
+                {contactPhoneNumber}
+              </P3>
             </a>
           </Fade>
           <Spacer size={'xs'} />
           <Fade delay={400} bottom ssrFadeout>
             <a style={{ textDecoration: 'none' }} href="mailto:falraddadi@gadova.com">
-              <P3 color={colors.black} uppercase={true} weight={500}>falraddadi@gadova.com</P3>
+              <P3 color={colors.black} uppercase={true} weight={500}>
+                {contactEmailAddress}
+              </P3>
             </a>
           </Fade>
           <Spacer size={'md'} />
           <Fade delay={600} bottom ssrFadeout>
-            <P3 uppercase={true}>1822 Main Street</P3>
+            <P3 uppercase={true}>
+              {contactAddressLine1}
+            </P3>
           </Fade>
           <Spacer size={'xs'} />
           <Fade delay={800} bottom ssrFadeout>
-            <P3 uppercase={true}>Sharpsburg, PA 15215</P3>
+            <P3 uppercase={true}>
+              {contactAddressLine2}
+            </P3>
           </Fade>
         </StyledTextContainer>
       </Flex>
