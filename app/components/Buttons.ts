@@ -41,7 +41,7 @@ export const Button = styled.button<IButton>`
   `}
 `;
 
-export const ButtonRound = styled.button<IButton>`
+export const ButtonRound = styled.div<IButton>`
   background: ${colors.yellow};
   border: none;
   border-radius: 17px;
@@ -52,11 +52,6 @@ export const ButtonRound = styled.button<IButton>`
   font-weight: 300;
   padding: ${GU * 2}px ${GU * 10}px;
   transition: all 0.3s ease;
-
-  &:hover {
-    cursor: pointer;
-    box-shadow: ${shadows.buttonHover};
-  }
 
   ${media.xl`
     font-size: 2.2rem;

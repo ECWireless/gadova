@@ -8,15 +8,17 @@ import { Button } from 'components/Buttons';
 import { Container, Flex } from 'components/Containers';
 import { Input, TextArea } from 'components/Forms';
 import Spacer from 'components/Spacer';
-import { H2 } from 'components/Typography';
+import { H2, P1 } from 'components/Typography';
 
 interface ContactProps {
   contactHeading: string;
+  contactParagraph: string;
   contactBackgroundImage: any;
 }
 
 export const Contact: React.FC<ContactProps> = ({
   contactHeading,
+  contactParagraph,
   contactBackgroundImage,
 }) => {
   const onSubmit = (e: React.FocusEvent<HTMLFormElement>) => {
@@ -32,6 +34,10 @@ export const Contact: React.FC<ContactProps> = ({
       <Container>
         <Fade bottom ssrFadeout>
           <H2 color={colors.white} uppercase={true} weight={700}>{contactHeading}</H2>
+        </Fade>
+        <Spacer size={'sm'} />
+        <Fade bottom ssrFadeout>
+          <P1 color={colors.white}>{contactParagraph}</P1>
         </Fade>
         <Spacer size={'md'} />
         <form onSubmit={onSubmit}>

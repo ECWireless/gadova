@@ -12,7 +12,8 @@ import { H3, H4, P2, P3 } from 'components/Typography'
 
 interface IServices {
   servicesHeading: string;
-  servicesParagraph: string;
+  servicesParagraph1: string;
+  servicesParagraph2: string;
   servicesExamples1Heading: string;
   servicesExamples1Item1: string;
   servicesExamples1Item2: string;
@@ -44,7 +45,8 @@ interface IServices {
 
 export const Services: React.FC<IServices> = ({
   servicesHeading,
-  servicesParagraph,
+  servicesParagraph1,
+  servicesParagraph2,
   servicesExamples1Heading,
   servicesExamples1Item1,
   servicesExamples1Item2,
@@ -80,14 +82,20 @@ export const Services: React.FC<IServices> = ({
         <ButtonRound style={{ margin: '0 auto' }}>
           What we do
         </ButtonRound>
+        <Spacer size={'sm'} />
+        <Fade ssrFadeout>
+          <P3 align={'center'} weight={300}>
+            {servicesParagraph1}
+          </P3>
+        </Fade>
         <Spacer size={'md'} />
         <Fade ssrFadeout>
           <H4 align={'center'} bold={true} uppercase={true}>{servicesHeading}</H4>
         </Fade>
         <Spacer size={'sm'} />
-        <Fade ssrFadeout>
+        <Fade delay={200} ssrFadeout>
           <P3 align={'center'} weight={300}>
-            {servicesParagraph}
+            {servicesParagraph2}
           </P3>
         </Fade>
       </Flex>

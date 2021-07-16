@@ -33,8 +33,13 @@ export default {
       type: 'string',
     },
     {
-      name: 'servicesParagraph',
-      title: 'Services Paragraph',
+      name: 'servicesParagraph1',
+      title: 'Services Paragraph 1',
+      type: 'string',
+    },
+    {
+      name: 'servicesParagraph2',
+      title: 'Services Paragraph 2',
       type: 'string',
     },
     {
@@ -247,6 +252,11 @@ export default {
     {
       name: 'contactHeading',
       title: 'Contact Heading',
+      type: 'string',
+    },
+    {
+      name: 'contactParagraph',
+      title: 'Contact Paragraph',
       type: 'string',
     },
     {

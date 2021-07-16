@@ -12,7 +12,8 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
 		heroHeading,
 		heroSubheading,
     servicesHeading,
-    servicesParagraph,
+    servicesParagraph1,
+    servicesParagraph2,
     servicesExamples1Heading,
     servicesExamples1Item1,
     servicesExamples1Item2,
@@ -53,6 +54,7 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
     locationParagraph1,
     locationParagraph2,
     contactHeading,
+    contactParagraph,
     contactBackgroundImage,
   } = homeProps
 
@@ -82,7 +84,8 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
         <div style={{ transform: 'translateY(-150px)' }} ref={servicesRef} />
         <Services
           servicesHeading={servicesHeading}
-          servicesParagraph={servicesParagraph}
+          servicesParagraph1={servicesParagraph1}
+          servicesParagraph2={servicesParagraph2}
           servicesExamples1Heading={servicesExamples1Heading}
           servicesExamples1Item1={servicesExamples1Item1}
           servicesExamples1Item2={servicesExamples1Item2}
@@ -131,6 +134,7 @@ const Home: React.FC = ({ homeProps }: { [key: string]: any} ) => {
         <div style={{ transform: 'translateY(-100px)' }} ref={contactRef} />
         <Contact
           contactHeading={contactHeading}
+          contactParagraph={contactParagraph}
           contactBackgroundImage={urlFor(contactBackgroundImage)}
         />
       </Main>
@@ -147,7 +151,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
 		heroHeading,
 		heroSubheading,
     servicesHeading,
-    servicesParagraph,
+    servicesParagraph1,
+    servicesParagraph2,
     servicesExamples1Heading,
     servicesExamples1Item1,
     servicesExamples1Item2,
@@ -188,6 +193,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     locationParagraph1,
     locationParagraph2,
     contactHeading,
+    contactParagraph,
     contactBackgroundImage,
 	}`)
 	return {
