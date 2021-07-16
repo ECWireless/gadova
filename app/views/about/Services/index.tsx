@@ -15,6 +15,7 @@ interface ServicesProps {
   aboutServicesItem4: string;
   aboutServicesItem5: string;
   aboutServicesItem6: string;
+  aboutServicesItem7: string;
   aboutServicesImage: any;
 }
 
@@ -26,6 +27,7 @@ export const Services: React.FC<ServicesProps> = ({
   aboutServicesItem4,
   aboutServicesItem5,
   aboutServicesItem6,
+  aboutServicesItem7,
   aboutServicesImage,
 }) => {
   return (
@@ -45,6 +47,7 @@ export const Services: React.FC<ServicesProps> = ({
             <li>{aboutServicesItem4}</li>
             <li>{aboutServicesItem5}</li>
             <li>{aboutServicesItem6}</li>
+            <li>{aboutServicesItem7}</li>
           </StyledList>
           <Spacer size={'md'} />
         </StyledTextContainer>

@@ -18,6 +18,7 @@ const About: React.FC = ({ aboutProps }: { [key: string]: any}) => {
     aboutServicesItem4,
     aboutServicesItem5,
     aboutServicesItem6,
+    aboutServicesItem7,
     aboutServicesImage,
     aboutCertificatesHeading,
     aboutCertificatesParagraph,
@@ -45,6 +46,7 @@ const About: React.FC = ({ aboutProps }: { [key: string]: any}) => {
           aboutServicesItem4={aboutServicesItem4}
           aboutServicesItem5={aboutServicesItem5}
           aboutServicesItem6={aboutServicesItem6}
+          aboutServicesItem7={aboutServicesItem7}
           aboutServicesImage={urlFor(aboutServicesImage)}
         />
         <Certificates
@@ -74,6 +76,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     aboutServicesItem4,
     aboutServicesItem5,
     aboutServicesItem6,
+    aboutServicesItem7,
     aboutServicesImage,
     aboutCertificatesHeading,
     aboutCertificatesParagraph,

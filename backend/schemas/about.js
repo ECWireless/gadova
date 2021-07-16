@@ -71,6 +71,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'aboutServicesItem7',
+      title: 'About Services Item 7',
+      type: 'string'
+    },
+    {
       name: 'aboutServicesImage',
       title: 'About Services Image',
       type: 'image',

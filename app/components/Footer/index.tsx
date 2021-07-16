@@ -24,8 +24,8 @@ const Footer: React.FC = () => {
               <P4 uppercase={true}>412-781-1666</P4>
             </StyledLink>
             <Spacer size={'xs'} />
-            <StyledLink href="mailto:falraddadi@gadova.com">
-              <P4 uppercase={true}>falraddadi@gadova.com</P4>
+            <StyledLink href="mailto:info@gadova.com">
+              <P4 uppercase={true}>info@gadova.com</P4>
             </StyledLink>
           </StyledTextContainerRight>
         </StyledInnerContainer>
