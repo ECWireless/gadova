@@ -11,6 +11,7 @@ import { Main } from 'components/Main';
 const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any}) => {
   const {
     contactHeading,
+    contactParagraph,
     contactBackgroundImage,
   } = homeProps
 
@@ -194,6 +195,7 @@ const Services: React.FC = ({ homeProps, servicesProps }: { [key: string]: any})
         />
         <Contact
           contactHeading={contactHeading}
+          contactParagraph={contactParagraph}
           contactBackgroundImage={urlFor(contactBackgroundImage)}
         />
       </Main>
@@ -208,6 +210,7 @@ function urlFor(source) {
 export const getServerSideProps: GetServerSideProps = async () => {
   const homeProps = await client.fetch(`*[_type == "home" && slug.current == "v1"][0] {
     contactHeading,
+    contactParagraph,
     contactBackgroundImage,
 	}`)
   const servicesProps = await client.fetch(`*[_type == "services" && slug.current == "v1"][0] {
