@@ -52,6 +52,7 @@ export const ButtonRound = styled.div<IButton>`
   font-weight: 300;
   padding: ${GU * 2}px ${GU * 10}px;
   transition: all 0.3s ease;
+  width: ${GU * 50}px;
 
   ${media.xl`
     font-size: 2.2rem;

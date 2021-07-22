@@ -27,11 +27,9 @@ export const History: React.FC<HistoryProps> = ({
       <Flex respondFlip={true} justify={'space-between'}>
         <StyledPhoto style={{ backgroundImage: `url(${aboutImage})`}} />
         <StyledTextContainer>
-          <Fade ssrFadeout>
-            <ButtonRound>
-              What we do
-            </ButtonRound>
-          </Fade>
+          <ButtonRound>
+            What we do
+          </ButtonRound>
           <Spacer size={'sm'} />
           <Fade bottom ssrFadeout>
             <H4 weight={700} uppercase={true}>
