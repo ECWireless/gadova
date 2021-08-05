@@ -57,6 +57,7 @@ export const ButtonRound = styled.div<IButton>`
   ${media.xl`
     font-size: 2.2rem;
     padding: ${GU * 2}px ${GU * 10}px;
+    width: ${GU * 55}px;
   `}
 
   ${props => props.uppercase && css`

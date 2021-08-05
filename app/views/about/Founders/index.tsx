@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import BlockContent from '@sanity/block-content-to-react';
 import { Fade } from 'react-reveal'
 import { media } from 'components/breakpoints';
 import { GU } from 'components/theme';
 
-import { ButtonRound } from 'components/Buttons';
 import { Container, Flex } from 'components/Containers';
 import Spacer from 'components/Spacer';
 import { P2, P3 } from 'components/Typography';
@@ -81,7 +79,7 @@ const StyledPic = styled.div`
   width: ${GU * 60}px;
 
   ${media.sm`
-    height: ${GU * 80}px;
-    width: ${GU * 80}px;
+    height: ${GU * 70}px;
+    width: ${GU * 70}px;
   `}
 `;
