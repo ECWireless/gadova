@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { colors, GU } from 'components/theme'
 import { media } from 'components/breakpoints'
 
-// Components
-import { Container } from 'components/Containers';
+import { Container, Flex } from 'components/Containers';
 import { SandwichMenu } from 'components/SandwichMenu'
+import { P4 } from 'components/Typography';
 
 export default function Navigation({ setSidebar }) {
   // const [background, setBackground] = React.useState(false)
@@ -29,32 +29,37 @@ export default function Navigation({ setSidebar }) {
         <SandwichMenu setSidebar={setSidebar} />
       </StyledMenuContainer>
       <Container style={{ height: '100%' }}>
-        <StyledNav>
-          <Link href='/'>
-            {router.pathname === '/'
-              ? <StyledNavButtonActive>Home</StyledNavButtonActive>
-              : <StyledNavButton>Home</StyledNavButton>
-            }
-          </Link>
-          <Link href='/about'>
-            {router.pathname === '/about'
-              ? <StyledNavButtonActive>About</StyledNavButtonActive>
-              : <StyledNavButton>About</StyledNavButton>
-            }
-          </Link>
-          <Link href='/services'>
-            {router.pathname === '/services'
-              ? <StyledNavButtonActive>Services</StyledNavButtonActive>
-              : <StyledNavButton>Services</StyledNavButton>
-            }
-          </Link>
-          <Link href='/contact'>
-            {router.pathname === '/contact'
-              ? <StyledNavButtonActive>Contact</StyledNavButtonActive>
-              : <StyledNavButton>Contact</StyledNavButton>
-            }
-          </Link>
-        </StyledNav>
+        <Flex align={'center'} justify={'space-between'} style={{ height: '100%' }}>
+          <StyledNav>
+            <Link href='/'>
+              {router.pathname === '/'
+                ? <StyledNavButtonActive>Home</StyledNavButtonActive>
+                : <StyledNavButton>Home</StyledNavButton>
+              }
+            </Link>
+            <Link href='/about'>
+              {router.pathname === '/about'
+                ? <StyledNavButtonActive>About</StyledNavButtonActive>
+                : <StyledNavButton>About</StyledNavButton>
+              }
+            </Link>
+            <Link href='/services'>
+              {router.pathname === '/services'
+                ? <StyledNavButtonActive>Services</StyledNavButtonActive>
+                : <StyledNavButton>Services</StyledNavButton>
+              }
+            </Link>
+            <Link href='/contact'>
+              {router.pathname === '/contact'
+                ? <StyledNavButtonActive>Contact</StyledNavButtonActive>
+                : <StyledNavButton>Contact</StyledNavButton>
+              }
+            </Link>
+          </StyledNav>
+          <StyledCertificateContainer>
+            <P4 color={colors.white} weight={500}>ISO 9001: 15 and ISO 13485:16 Certified</P4>
+          </StyledCertificateContainer>
+        </Flex>
       </Container>
       <Link passHref href='/'>
         <StyledLogo style={{ backgroundImage: 'url(/gadova_logo_lg.png)'}} />
@@ -112,6 +117,14 @@ const StyledNav = styled.nav`
     width: ${GU * 95}px;
   `}
 `
+const StyledCertificateContainer = styled.nav`
+  display: none;
+
+  ${media.lg`
+    display: inline-block;
+  `}
+`
+
 
 const StyledNavButton = styled.button`
   background: transparent;
