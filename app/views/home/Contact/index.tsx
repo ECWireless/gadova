@@ -31,6 +31,7 @@ export const Contact: React.FC<ContactProps> = ({
       <StyledBackgroundOverlay />
       <Spacer size={'lg'} />
       <Spacer size={'lg'} />
+      <Spacer size={'lg'} />
       <Container>
         <Fade bottom ssrFadeout>
           <H2 color={colors.white} uppercase={true} weight={700}>{contactHeading}</H2>
@@ -60,13 +61,12 @@ export const Contact: React.FC<ContactProps> = ({
         </form>
       </Container>
       <Spacer size={'lg'} />
-      <Spacer size={'lg'} />
     </StyledBackground>
   )
 }
 
 const StyledBackground = styled.div`
-  background-position: center;
+  background-position:  bottom center;
   background-size: cover;
   position: relative;
 `;
