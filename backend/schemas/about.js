@@ -36,6 +36,42 @@ export default {
       },
     },
     {
+      name: 'aboutFounder1Image',
+      title: 'About Founder 1 Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'aboutFounder1Name',
+      title: 'About Founder 1 Name',
+      type: 'string'
+    },
+    {
+      name: 'aboutFounder1Description',
+      title: 'About Founder 1 Description',
+      type: 'string'
+    },
+    {
+      name: 'aboutFounder2Image',
+      title: 'About Founder 2 Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'aboutFounder2Name',
+      title: 'About Founder 2 Name',
+      type: 'string'
+    },
+    {
+      name: 'aboutFounder2Description',
+      title: 'About Founder 2 Description',
+      type: 'string'
+    },
+    {
       name: 'aboutServicesHeading',
       title: 'About Services Heading',
       type: 'string'

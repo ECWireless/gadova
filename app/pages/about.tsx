@@ -3,7 +3,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import client from 'client';
 import { GetServerSideProps } from 'next'
 
-import { History, Services, Certificates } from 'views/about';
+import { History, Founders, Services, Certificates } from 'views/about';
 import { Main } from 'components/Main';
 
 const About: React.FC = ({ aboutProps }: { [key: string]: any}) => {
@@ -11,6 +11,12 @@ const About: React.FC = ({ aboutProps }: { [key: string]: any}) => {
 		aboutHeading,
     aboutDescription,
     aboutImage,
+    aboutFounder1Image,
+    aboutFounder1Name,
+    aboutFounder1Description,
+    aboutFounder2Image,
+    aboutFounder2Name,
+    aboutFounder2Description,
     aboutServicesHeading,
     aboutServicesItem1,
     aboutServicesItem2,
@@ -37,6 +43,14 @@ const About: React.FC = ({ aboutProps }: { [key: string]: any}) => {
           aboutHeading={aboutHeading}
           aboutDescription={aboutDescription}
           aboutImage={urlFor(aboutImage)}
+        />
+        <Founders
+          aboutFounder1Image={urlFor(aboutFounder1Image)}
+          aboutFounder1Name={aboutFounder1Name}
+          aboutFounder1Description={aboutFounder1Description}
+          aboutFounder2Image={urlFor(aboutFounder2Image)}
+          aboutFounder2Name={aboutFounder2Name}
+          aboutFounder2Description={aboutFounder2Description}
         />
         <Services
           aboutServicesHeading={aboutServicesHeading}
@@ -69,6 +83,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
 		aboutHeading,
     aboutDescription,
     aboutImage,
+    aboutFounder1Image,
+    aboutFounder1Name,
+    aboutFounder1Description,
+    aboutFounder2Image,
+    aboutFounder2Name,
+    aboutFounder2Description,
     aboutServicesHeading,
     aboutServicesItem1,
     aboutServicesItem2,
