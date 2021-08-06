@@ -75,11 +75,6 @@ const StyledFounderContainer = styled.div`
 const StyledPic = styled.div`
   background-position: center;
   background-size: cover;
-  height: ${GU * 60}px;
-  width: ${GU * 60}px;
-
-  ${media.sm`
-    height: ${GU * 70}px;
-    width: ${GU * 70}px;
-  `}
+  height: ${GU * 56}px;
+  width: ${GU * 56}px;
 `;
