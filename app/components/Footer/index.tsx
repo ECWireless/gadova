@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
             </StyledLink>
             <Spacer size={'xs'} />
             <StyledLink href="mailto:info@gadova.com">
-              <P4>info@gadova.com</P4>
+              <P4>gbeluk@gadova.com</P4>
             </StyledLink>
           </StyledTextContainerRight>
         </StyledInnerContainer>

@@ -7,6 +7,7 @@ import { colors } from 'components/theme';
 import { Button } from 'components/Buttons';
 import { Container, Flex } from 'components/Containers';
 import { Input, TextArea } from 'components/Forms';
+import Snackbar from 'components/Snackbar';
 import Spacer from 'components/Spacer';
 import { H2, P1 } from 'components/Typography';
 
@@ -21,9 +22,76 @@ export const Contact: React.FC<ContactProps> = ({
   contactParagraph,
   contactBackgroundImage,
 }) => {
-  const onSubmit = (e: React.FocusEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log('submitted');
+  const [status, setStatus] = React.useState({
+    submitted: false,
+    submitting: false,
+    info: { error: false, msg: null }
+  })
+
+  const [inputs, setInputs] = React.useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  })
+
+  const [snackbar, setSnackbar] = React.useState(false)
+  
+  const handleResponse = (status, msg) => {
+    if (status === 200) {
+      setStatus(prev => ({
+        ...prev,
+        submitted: true,
+        submitting: false,
+        info: { error: false, msg: msg }
+      }))
+      setInputs(prev => ({
+        ...prev,
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      }))
+      setSnackbar(true)
+    } else {
+      setStatus(prev => ({
+        ...prev,
+        info: { error: true, msg: msg }
+      }))
+      setSnackbar(true)
+    }
+  }
+
+  const handleOnChange = e => {
+    e.persist()
+    setInputs(prev => ({
+      ...prev,
+      [e.target.id]: e.target.value
+    }))
+    setStatus(prev => ({
+      ...prev,
+      submitted: false,
+      submitting: false,
+      info: { error: false, msg: null }
+    }))
+  }
+
+  const handleOnSubmit = async e => {
+    e.preventDefault()
+    setStatus(prevStatus => ({ ...prevStatus, submitting: true }))
+    const res = await fetch('/api/hello', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(inputs)
+    })
+    const text = await res.text()
+    handleResponse(res.status, text)
+  }
+
+  const onCloseSnackbar = () => {
+    setSnackbar(false)
   }
 
   return (
@@ -46,17 +114,43 @@ export const Contact: React.FC<ContactProps> = ({
           <P1 color={colors.white}>{contactParagraph}</P1>
         </Fade>
         <Spacer size={'md'} />
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleOnSubmit}>
           <Flex respond justify={'space-between'}>
             <StyledInputsContainer>
-              <Input required type="text" placeholder={'name:'} />
+              <Input
+                id={'name'}
+                required
+                type="text"
+                placeholder={'name:'}
+                onChange={handleOnChange}
+                value={inputs.name}
+              />
               <Spacer size={'md'} />
-              <Input required type="email" placeholder={'email:'} />
+              <Input
+                id={'email'}
+                required
+                type="email"
+                placeholder={'email:'}
+                onChange={handleOnChange}
+                value={inputs.email}
+              />
               <Spacer size={'md'} />
-              <Input required type="text" placeholder={'subject:'} />
+              <Input
+                id={'subject'}
+                required type="text"
+                placeholder={'subject:'}
+                onChange={handleOnChange}
+                value={inputs.subject}
+              />
             </StyledInputsContainer>
             <StyledInputsContainer>
-              <TextArea required placeholder={'project description:'} />
+              <TextArea
+                id={'message'}
+                required
+                placeholder={'project description:'}
+                onChange={handleOnChange}
+                value={inputs.message}
+              />
             </StyledInputsContainer>
           </Flex>
           <Spacer size={'md'} />
@@ -66,6 +160,7 @@ export const Contact: React.FC<ContactProps> = ({
         </form>
       </Container>
       <Spacer size={'lg'} />
+      { snackbar && <Snackbar success={!status.info.error} onCloseSnackbar={onCloseSnackbar} /> }
     </StyledBackground>
   )
 }
