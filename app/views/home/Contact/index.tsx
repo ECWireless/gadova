@@ -9,6 +9,7 @@ import { Container, Flex } from 'components/Containers';
 import { Input, TextArea } from 'components/Forms';
 import Snackbar from 'components/Snackbar';
 import Spacer from 'components/Spacer';
+import Spinner from 'components/Spinner';
 import { H2, P1 } from 'components/Typography';
 
 interface ContactProps {
@@ -155,7 +156,7 @@ export const Contact: React.FC<ContactProps> = ({
           </Flex>
           <Spacer size={'md'} />
           <Flex justify={'flex-end'}>
-            <Button color={colors.white} uppercase={true} weight={600}>Submit</Button>
+            <Button color={colors.white} uppercase={true} weight={600}>{status.submitting ? <Spinner /> : 'Submit'}</Button>
           </Flex>
         </form>
       </Container>
