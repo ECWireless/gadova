@@ -57,7 +57,7 @@ export default function Navigation({ setSidebar }) {
             </Link>
           </StyledNav>
           <StyledCertificateContainer>
-            <P4 color={colors.white} weight={500}>ISO 9001: 15 and ISO 13485:16 Certified</P4>
+            <P4 color={colors.white} weight={500}>ISO 9001:15 and ISO 13485:16 Certified</P4>
           </StyledCertificateContainer>
         </Flex>
       </Container>
