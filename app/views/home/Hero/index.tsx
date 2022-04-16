@@ -23,7 +23,7 @@ export const Hero: React.FC<IHero> = ({
   return (
     <StyledHeroContainer>
       <StyledHeroVideo autoPlay loop muted playsInline>
-        <source src='/videos/hero.mp4' type="video/mp4" />
+        <source src='https://arweave.net/S_aDKJUQMkFZT8R-ErRMTbIaKNQQmIZirqxw_xyXljE' type="video/mp4" />
       </StyledHeroVideo>
       <StyledInnerContainer>
         <Fade ssrFadeout>
